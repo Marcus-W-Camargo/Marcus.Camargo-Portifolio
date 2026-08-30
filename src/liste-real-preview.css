@@ -1,0 +1,267 @@
+.lista-real-preview {
+  background: #7b9fd6;
+  border: 3px solid #1a263b;
+}
+
+.lista-real-scene {
+  position: relative;
+  min-height: 100%;
+  padding: 18px;
+  overflow: hidden;
+  background: #7b9fd6;
+  color: #1a263b;
+}
+
+.lista-real-scene::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(26,38,59,.10) 0 2px, transparent 3px),
+    radial-gradient(circle at 76% 28%, rgba(26,38,59,.10) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 76%, rgba(26,38,59,.10) 0 2px, transparent 3px);
+  background-size: 86px 86px, 104px 104px, 120px 120px;
+  opacity: .7;
+}
+
+.lista-real-doodle {
+  position: absolute;
+  z-index: 0;
+  filter: grayscale(1) saturate(0) contrast(.7);
+  opacity: .22;
+  font-size: 52px;
+}
+.doodle-one { top: 46px; left: 50px; transform: rotate(-8deg); }
+.doodle-two { bottom: 38px; left: 28px; transform: rotate(12deg); }
+.doodle-three { top: 80px; right: 44px; transform: rotate(9deg); }
+.doodle-four { bottom: 44px; right: 66px; transform: rotate(-11deg); }
+
+.lista-real-logo,
+.lista-real-user,
+.lista-real-sidecard,
+.lista-real-main { position: relative; z-index: 1; }
+
+.lista-real-logo {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  color: #f7501b;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: .8;
+  transform: rotate(-8deg);
+}
+
+.lista-real-user {
+  position: absolute;
+  top: 13px;
+  right: 17px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 7px;
+  font-weight: 800;
+}
+.lista-real-user span {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 2px solid #1a263b;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.lista-real-sidecard {
+  position: absolute;
+  top: 57px;
+  left: 13px;
+  width: 118px;
+  padding: 9px;
+  border: 2px solid #1a263b;
+  border-radius: 12px;
+  background: rgba(255,255,255,.94);
+  box-shadow: 0 6px 12px rgba(26,38,59,.15);
+  font-size: 7px;
+}
+.lista-real-sidecard > strong {
+  display: block;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #1a263b;
+  font-size: 8px;
+}
+.lista-real-sideitem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 7px;
+  padding: 7px;
+  border: 1.5px solid #1a263b;
+  border-radius: 10px;
+  background: #fff;
+}
+.lista-real-sideitem span { display: flex; flex-direction: column; gap: 2px; }
+.lista-real-sideitem small { color: #7b9fd6; font-size: 5px; }
+.lista-real-sideitem em { color: #f7501b; font-size: 10px; font-style: normal; }
+
+.lista-real-main {
+  width: 54%;
+  min-width: 260px;
+  margin: 8px auto 0;
+}
+.lista-real-main h3 {
+  margin: 0 0 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.lista-real-formcard,
+.lista-real-listcard {
+  border: 2px solid #1a263b;
+  border-radius: 14px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 8px 16px rgba(26,38,59,.14);
+}
+
+.lista-real-formcard {
+  position: relative;
+  padding: 10px;
+}
+.lista-real-formcard label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 6px;
+  font-weight: 800;
+}
+.lista-real-input,
+.lista-real-suggestion {
+  padding: 8px;
+  border: 1.5px solid #1a263b;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 7px;
+}
+.lista-real-input { border-color: #f7501b; box-shadow: 0 0 0 2px rgba(247,80,27,.15); }
+.lista-real-suggestion {
+  position: absolute;
+  top: 53px;
+  left: 10px;
+  right: 10px;
+  z-index: 3;
+  font-weight: 800;
+}
+.lista-real-controls {
+  display: grid;
+  grid-template-columns: 1.5fr .7fr .55fr;
+  gap: 6px;
+  margin-top: 38px;
+}
+.lista-real-controls > div {
+  min-height: 33px;
+  padding: 5px 7px;
+  border: 1.5px solid #1a263b;
+  border-radius: 9px;
+  background: #fff;
+}
+.lista-real-controls small,
+.lista-real-controls b { display: block; }
+.lista-real-controls small { color: #4a5b78; font-size: 5px; }
+.lista-real-controls b { margin-top: 2px; font-size: 6px; }
+.lista-real-toggle {
+  display: grid !important;
+  place-items: center;
+  background: #f7501b !important;
+  color: #fff;
+  font-size: 6px;
+  font-weight: 900;
+}
+.lista-real-add {
+  width: 100%;
+  margin-top: 7px;
+  padding: 7px;
+  border: 1.5px solid #1a263b;
+  border-radius: 8px;
+  background: #bfc5ca;
+  color: rgba(26,38,59,.45);
+  font-size: 6px;
+  font-weight: 800;
+}
+
+.lista-real-listcard {
+  margin-top: 7px;
+  padding: 9px;
+}
+.lista-real-listhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 7px;
+  font-weight: 900;
+}
+.lista-real-listhead b {
+  padding: 4px 6px;
+  border-radius: 999px;
+  background: #f7501b;
+  color: #fff;
+  font-size: 5px;
+}
+.lista-real-chip {
+  width: max-content;
+  margin-bottom: 6px;
+  padding: 4px 7px;
+  border: 1.5px solid #1a263b;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 5px;
+  font-weight: 800;
+}
+.lista-real-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+  padding: 6px 7px;
+  border: 1.5px solid #1a263b;
+  border-radius: 10px;
+  background: #fff;
+}
+.lista-real-item span { display: flex; flex-direction: column; gap: 1px; }
+.lista-real-item b { font-size: 6px; }
+.lista-real-item small { color: #7b9fd6; font-size: 4.5px; font-weight: 700; }
+.lista-real-item em {
+  min-width: 30px;
+  padding: 3px 4px;
+  border: 1px solid #1a263b;
+  border-radius: 6px;
+  color: #1a263b;
+  font-size: 5px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+}
+.lista-real-item i { font-size: 7px; font-style: normal; }
+.lista-real-save {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border: 2px solid #1a263b;
+  border-radius: 8px;
+  background: #f7501b;
+  color: #fff;
+  font-size: 7px;
+  font-weight: 900;
+}
+
+@media (max-width: 760px) {
+  .lista-real-scene { padding: 12px; }
+  .lista-real-logo { left: 12px; font-size: 13px; }
+  .lista-real-user { right: 10px; font-size: 5px; }
+  .lista-real-user span { width: 20px; height: 20px; }
+  .lista-real-sidecard { display: none; }
+  .lista-real-main { width: 78%; min-width: 0; margin-top: 14px; }
+  .lista-real-main h3 { font-size: 11px; }
+  .lista-real-formcard, .lista-real-listcard { border-radius: 11px; }
+}
