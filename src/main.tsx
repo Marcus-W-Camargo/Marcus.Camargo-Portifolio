@@ -4,6 +4,7 @@ import './styles.css'
 import './identity-overrides.css'
 import './hero-stats-overrides.css'
 import './about-overrides.css'
+import './contact-overrides.css'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(
