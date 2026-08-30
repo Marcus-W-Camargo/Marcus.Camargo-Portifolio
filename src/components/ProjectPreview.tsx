@@ -56,30 +56,54 @@ export function ProjectPreview({ variant }: Props) {
   }
 
   return (
-    <div className="mock-browser mock-browser-lista">
-      <div className="browser-bar lista-browser-bar"><i /><i /><i /></div>
-      <div className="lista-ui">
-        <div className="lista-app-panel">
-          <div className="lista-head">
-            <strong>Liste &amp; Compre</strong>
-            <span>Minha lista</span>
+    <div className="mock-browser mock-browser-lista lista-real-preview">
+      <div className="lista-real-scene">
+        <span className="lista-real-doodle doodle-one">🍅</span>
+        <span className="lista-real-doodle doodle-two">🥕</span>
+        <span className="lista-real-doodle doodle-three">🍐</span>
+        <span className="lista-real-doodle doodle-four">🍄</span>
+
+        <div className="lista-real-logo">Liste &amp;<br />Compre</div>
+        <div className="lista-real-user">Olá, Marcus <span>👤</span></div>
+
+        <div className="lista-real-sidecard">
+          <strong>📋 Minhas Listas</strong>
+          <div className="lista-real-sideitem">
+            <span><b>Final de Semana</b><small>4 itens</small></span>
+            <em>✎</em>
+          </div>
+        </div>
+
+        <div className="lista-real-main">
+          <h3>🛒 Criar Lista</h3>
+
+          <div className="lista-real-formcard">
+            <label>Nome do Produto</label>
+            <div className="lista-real-input">Maçã ver</div>
+            <div className="lista-real-suggestion">Maçã Verde</div>
+
+            <div className="lista-real-controls">
+              <div><small>Categoria</small><b>🍎 Hortifruti</b></div>
+              <div><small>Qtd.</small><b>2</b></div>
+              <div className="lista-real-toggle">kg</div>
+            </div>
+
+            <button className="lista-real-add" type="button">Adicionar à Lista</button>
           </div>
 
-          <div className="lista-summary">
-            <div><small>Itens</small><strong>4</strong></div>
-            <div><small>Estimativa</small><strong>R$ 148,90</strong></div>
-          </div>
+          <div className="lista-real-listcard">
+            <div className="lista-real-listhead">
+              <span>Itens da Lista</span>
+              <b>4 itens</b>
+            </div>
+            <div className="lista-real-chip">Geral (Todos)⌄</div>
 
-          <div className="lista-items">
-            <div className="lista-item"><i>✓</i><span><b>Arroz</b><small>Mercearia</small></span><em>2 un</em></div>
-            <div className="lista-item"><i>✓</i><span><b>Feijão</b><small>Mercearia</small></span><em>1 kg</em></div>
-            <div className="lista-item"><i>✓</i><span><b>Leite</b><small>Laticínios</small></span><em>6 un</em></div>
-            <div className="lista-item"><i>✓</i><span><b>Café</b><small>Mercearia</small></span><em>1 un</em></div>
-          </div>
+            <div className="lista-real-item"><span><b>Arroz</b><small>🟨 Mercearia</small></span><em>2</em><i>🗑</i></div>
+            <div className="lista-real-item"><span><b>Feijão</b><small>🟨 Mercearia</small></span><em>0,700</em><i>🗑</i></div>
+            <div className="lista-real-item"><span><b>Leite</b><small>🥛 Laticínios</small></span><em>2</em><i>🗑</i></div>
+            <div className="lista-real-item"><span><b>Nutella</b><small>📦 Outros</small></span><em>1</em><i>🗑</i></div>
 
-          <div className="lista-total">
-            <span>Total estimado</span>
-            <strong>R$ 148,90</strong>
+            <button className="lista-real-save" type="button">💾 Salvar Lista</button>
           </div>
         </div>
       </div>
