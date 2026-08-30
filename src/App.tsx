@@ -10,6 +10,7 @@ import {
   Workflow,
 } from 'lucide-react'
 import logo from './assets/logo.png'
+import profile from './assets/perfil.jpg'
 import { Header } from './components/Header'
 import { ProjectPreview } from './components/ProjectPreview'
 import { SectionHeading } from './components/SectionHeading'
@@ -111,14 +112,34 @@ function App() {
           </div>
 
           <div className="hero-visual">
-            <div className="logo-orbit">
+            <div className="profile-orbit">
               <div className="orbit orbit-one" />
               <div className="orbit orbit-two" />
               <div className="orbit-dot dot-one" />
               <div className="orbit-dot dot-two" />
-              <div className="hero-logo-card">
-                <img src={logo} alt="Logotipo Marcus Camargo Portfólio" />
+              <div className="hero-profile-card">
+                <img src={profile} alt="Marcus Camargo" />
+                <div className="profile-caption">
+                  <span>Marcus Camargo</span>
+                  <small>Desenvolvimento & Soluções Digitais</small>
+                </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="brand-showcase" aria-label="Identidade visual Marcus Camargo">
+          <div className="brand-showcase-inner">
+            <div className="brand-showcase-copy">
+              <span className="section-kicker">Identidade</span>
+              <h2>Uma marca voltada para tecnologia, proximidade e soluções digitais.</h2>
+              <p>
+                Desenvolvimento com identidade própria, comunicação direta e foco em
+                experiências modernas para web.
+              </p>
+            </div>
+            <div className="brand-logo-panel">
+              <img src={logo} alt="Logomarca Marcus Camargo Portfólio" />
             </div>
           </div>
         </section>
@@ -147,8 +168,8 @@ function App() {
         <section className="section projects-section" id="projetos">
           <SectionHeading
             kicker="Projetos em destaque"
-            title="Produtos digitais construídos do conceito à publicação."
-            text="Uma seleção de aplicações que combinam interface, lógica de negócio, integrações e experiência responsiva."
+            title="Projetos digitais desenvolvidos na prática."
+            text="Uma seleção de sites e aplicações criados para explorar interfaces, recursos web, integrações, APIs e experiências responsivas."
           />
 
           <div className="projects-list">
