@@ -1,0 +1,18 @@
+.section-kicker,
+.eyebrow {
+  color: #ff4ca6;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .17em;
+}
+
+.eyebrow span {
+  background: #ff4ca6;
+}
+
+@media (max-width: 760px) {
+  .section-kicker,
+  .eyebrow {
+    font-size: 13px;
+  }
+}
