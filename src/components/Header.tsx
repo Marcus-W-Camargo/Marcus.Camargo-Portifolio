@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import logoBase64 from '../assets/logo-base64.txt?raw'
+import profileBase64 from '../assets/perfil-base64.txt?raw'
 
-const logo = `data:image/png;base64,${logoBase64.trim()}`
+const profile = `data:image/jpeg;base64,${profileBase64.trim()}`
 
 const links = [
   ['Início', 'inicio'],
@@ -18,7 +18,7 @@ export function Header() {
   return (
     <header className="site-header">
       <a href="#inicio" className="brand" onClick={closeMenu}>
-        <img src={logo} alt="Marcus Camargo Portfólio" />
+        <img src={profile} alt="Foto de perfil de Marcus Camargo" />
         <span className="brand-text">
           <strong>Marcus Camargo</strong>
           <small>Desenvolvimento & Soluções Digitais</small>
