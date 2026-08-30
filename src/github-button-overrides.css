@@ -1,15 +1,24 @@
-.button-github {
+.button-github,
+.button-contact-animated {
   border: 1px solid rgba(255,255,255,.12);
   background: linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,10,120,.08));
   color: #fff;
   box-shadow: 0 10px 28px rgba(0,0,0,.18);
 }
 
-.button-github:hover {
+.button-github:hover,
+.button-contact-animated:hover {
   border-color: rgba(255,76,166,.5);
   background: linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,10,120,.14));
 }
 
 .button-github svg {
   color: #ff4ca6;
+}
+
+@media (max-width: 760px) {
+  .hero-actions .button-github {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
