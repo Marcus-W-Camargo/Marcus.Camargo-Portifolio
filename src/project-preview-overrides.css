@@ -3,7 +3,7 @@
 }
 
 .project-lista .project-preview {
-  background: linear-gradient(145deg, #1a263b 0%, #385b86 48%, #88aad8 76%, #f7501b 100%);
+  background: linear-gradient(145deg, #7b9fd6 0%, #88aad8 52%, #b2cef7 82%, #f7501b 100%);
 }
 
 .mock-browser-letreiro,
@@ -184,38 +184,50 @@
 }
 
 .mock-browser-lista {
-  background: #fffaf5;
-  border: 2px solid #1a263b;
+  background: #7b9fd6;
+  border: 3px solid #1a263b;
 }
 
 .lista-browser-bar {
   background: #1a263b;
+  border-bottom: 2px solid #1a263b;
 }
 
 .lista-browser-bar i {
-  background: #88aad8;
+  background: #b2cef7;
 }
 
 .lista-ui {
   min-height: calc(100% - 38px);
-  padding: 22px;
-  background: linear-gradient(180deg, #fffaf5, #ffebd6);
+  padding: 18px;
+  background:
+    radial-gradient(circle at 82% 16%, rgba(255,255,255,.22), transparent 23%),
+    linear-gradient(160deg, #7b9fd6 0%, #88aad8 70%, #b2cef7 100%);
   color: #1a263b;
 }
 
+.lista-app-panel {
+  padding: 16px;
+  border: 3px solid #1a263b;
+  border-radius: 22px;
+  background: rgba(255,255,255,.88);
+  box-shadow: 0 10px 24px rgba(26,38,59,.18);
+}
+
 .lista-head {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #1a263b;
+  border-bottom: 3px solid #1a263b;
 }
 
 .lista-head strong {
   color: #1a263b;
   font-size: 16px;
+  font-weight: 900;
 }
 
 .lista-head span {
-  padding: 5px 8px;
+  padding: 5px 9px;
   border-radius: 999px;
   background: #f7501b;
   color: #fff;
@@ -234,7 +246,7 @@
   padding: 9px 10px;
   border: 2px solid #1a263b;
   border-radius: 12px;
-  background: rgba(255,255,255,.8);
+  background: rgba(178,206,247,.42);
 }
 
 .lista-summary small,
@@ -249,6 +261,7 @@
 }
 
 .lista-summary strong {
+  color: #1a263b;
   font-size: 10px;
 }
 
@@ -266,8 +279,8 @@
   padding: 8px 10px;
   border: 2px solid #1a263b;
   border-radius: 14px;
-  background: rgba(255,235,214,.55);
-  box-shadow: none;
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 3px 8px rgba(26,38,59,.07);
 }
 
 .lista-item i {
@@ -275,6 +288,7 @@
   height: 22px;
   display: grid;
   place-items: center;
+  border: 2px solid #1a263b;
   border-radius: 50%;
   background: #f7501b;
   color: #fff;
@@ -353,5 +367,9 @@
   .letreiro-keyboard .key-enter {
     width: 78%;
     height: 29px;
+  }
+
+  .lista-app-panel {
+    padding: 13px;
   }
 }
