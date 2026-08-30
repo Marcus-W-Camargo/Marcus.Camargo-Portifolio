@@ -1,0 +1,359 @@
+/*
+ * Previews mobile do portfólio.
+ * Estas regras só entram em telas pequenas para preservar integralmente
+ * a composição desktop dos dois projetos.
+ */
+@media (max-width: 760px) {
+  .project-card .project-preview {
+    min-height: 0;
+    padding: 30px 16px;
+  }
+
+  .mock-browser-letreiro,
+  .lista-real-preview {
+    width: min(100%, 360px);
+    max-width: 360px;
+    margin-inline: auto;
+    aspect-ratio: .68;
+    transform: none;
+    border-radius: 20px;
+  }
+
+  /* ================================================================
+     LETREIRO — representação vertical próxima do comportamento mobile
+     ================================================================ */
+  .mock-browser-letreiro {
+    overflow: hidden;
+  }
+
+  .mock-browser-letreiro > .letreiro-browser-bar {
+    height: 32px;
+    padding-inline: 11px;
+  }
+
+  .mock-browser-letreiro > .letreiro-browser-bar i {
+    width: 7px;
+    height: 7px;
+  }
+
+  .letreiro-ui {
+    min-height: calc(100% - 32px);
+    padding: 20px 14px 18px;
+    box-sizing: border-box;
+  }
+
+  .letreiro-topline {
+    padding-bottom: 9px;
+  }
+
+  .letreiro-brand-lockup {
+    gap: 6px;
+  }
+
+  .letreiro-clapper {
+    font-size: 15px;
+  }
+
+  .letreiro-title {
+    font-size: 11px;
+    letter-spacing: .19em;
+  }
+
+  .letreiro-clue {
+    margin: 13px 0 11px;
+    font-size: 8px;
+  }
+
+  .letreiro-answer-row {
+    flex-wrap: nowrap;
+    gap: 4px;
+  }
+
+  .letreiro-answer-row span {
+    width: clamp(25px, 8vw, 30px);
+    height: clamp(25px, 8vw, 30px);
+    flex: 0 1 30px;
+    font-size: 9px;
+  }
+
+  /* No telefone as dicas deixam de disputar espaço horizontal. */
+  .letreiro-history {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    margin: 14px 0 12px;
+  }
+
+  .letreiro-history div {
+    min-height: 40px;
+    padding: 7px 9px;
+  }
+
+  .letreiro-history span {
+    margin-bottom: 2px;
+    font-size: 6px;
+  }
+
+  .letreiro-history strong {
+    font-size: 8px;
+  }
+
+  .letreiro-keyboard {
+    gap: 5px;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .mini-keyboard-row {
+    width: 100%;
+    margin-inline: auto;
+    gap: 3px;
+  }
+
+  .letreiro-keyboard .row-one {
+    max-width: 100%;
+  }
+
+  .letreiro-keyboard .row-two {
+    max-width: 92%;
+    padding-inline: 0;
+  }
+
+  .letreiro-keyboard .row-three {
+    max-width: 85%;
+    padding-inline: 0;
+  }
+
+  .letreiro-keyboard b {
+    width: auto;
+    min-width: 0;
+    max-width: 28px;
+    height: 27px;
+    flex: 1 1 0;
+    font-size: 7px;
+  }
+
+  .letreiro-keyboard .key-backspace {
+    width: auto;
+    max-width: 34px;
+    flex-grow: 1.25;
+    font-size: 11px;
+  }
+
+  .letreiro-keyboard .row-enter {
+    max-width: 72%;
+  }
+
+  .letreiro-keyboard .key-enter {
+    width: 100%;
+    max-width: none;
+    height: 29px;
+    font-size: 8px;
+  }
+
+  /* ==================================================================
+     LISTE & COMPRE — composição vertical inspirada no layout mobile real
+     ================================================================== */
+  .lista-real-preview {
+    display: block;
+    overflow: hidden;
+  }
+
+  .lista-real-preview > .lista-browser-bar {
+    height: 32px;
+    flex-basis: 32px;
+    padding-inline: 11px;
+  }
+
+  .lista-real-preview > .lista-browser-bar i {
+    width: 7px;
+    height: 7px;
+  }
+
+  .lista-real-preview > .lista-real-scene {
+    height: calc(100% - 32px);
+    min-height: 0;
+  }
+
+  .lista-real-logo-image {
+    top: 9px;
+    left: 11px;
+    width: 46px;
+  }
+
+  /* Em mobile a saudação extensa deixa de competir com o conteúdo. */
+  .lista-real-user {
+    top: 8px;
+    right: 9px;
+  }
+
+  .lista-real-user strong {
+    display: none;
+  }
+
+  .lista-real-user img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .lista-real-sidecard {
+    display: none;
+  }
+
+  .lista-real-main {
+    width: 88%;
+    min-width: 0;
+    max-width: none;
+    margin: 38px auto 0;
+  }
+
+  .lista-real-page-title {
+    height: 25px;
+    margin-bottom: 5px;
+    font-size: 10px;
+  }
+
+  .lista-real-page-title img {
+    width: 19px;
+    height: 19px;
+  }
+
+  .lista-real-formcard {
+    padding: 9px;
+  }
+
+  .lista-real-formcard label {
+    margin-bottom: 4px;
+    font-size: 5.8px;
+  }
+
+  .lista-real-input {
+    height: 29px;
+    padding-inline: 8px;
+    font-size: 6.8px;
+  }
+
+  .lista-real-controls {
+    grid-template-columns: minmax(0, 1fr) 46px 42px;
+    gap: 5px;
+    margin-top: 7px;
+  }
+
+  .lista-control-category,
+  .lista-control-qty,
+  .lista-control-switch {
+    height: 27px;
+  }
+
+  .lista-control-category {
+    font-size: 5.8px;
+  }
+
+  .lista-control-switch span {
+    width: 18px;
+    height: 18px;
+    font-size: 6px;
+  }
+
+  .lista-real-add {
+    height: 28px;
+    margin-top: 6px;
+    font-size: 5.8px;
+  }
+
+  .lista-real-listcard {
+    margin-top: 6px;
+    padding: 8px 9px 9px;
+  }
+
+  .lista-real-list-toolbar {
+    min-height: 20px;
+    gap: 4px;
+    margin-bottom: 5px;
+  }
+
+  .lista-real-list-toolbar > strong {
+    font-size: 6px;
+  }
+
+  .lista-real-filter {
+    height: 19px;
+    padding-inline: 4px;
+    font-size: 4.7px;
+  }
+
+  .lista-real-list-toolbar > b {
+    padding: 4px 5px;
+    font-size: 4.7px;
+  }
+
+  .lista-real-items {
+    gap: 4px;
+  }
+
+  .lista-real-item {
+    grid-template-columns: minmax(0, 1fr) 45px 31px 11px;
+    min-height: 28px;
+    gap: 4px;
+    padding: 4px 5px 4px 7px;
+  }
+
+  .lista-real-item-info b {
+    font-size: 5.6px;
+  }
+
+  .lista-real-item-info small {
+    font-size: 4.1px;
+  }
+
+  .lista-real-save {
+    height: 28px;
+    margin-top: 7px;
+    font-size: 6.2px;
+  }
+
+  .lista-real-footer {
+    bottom: 5px;
+    font-size: 3.5px;
+  }
+}
+
+/* Phones realmente estreitos: preserva conteúdo antes de reduzir legibilidade. */
+@media (max-width: 390px) {
+  .project-card .project-preview {
+    padding-inline: 12px;
+  }
+
+  .mock-browser-letreiro,
+  .lista-real-preview {
+    width: min(100%, 338px);
+    aspect-ratio: .64;
+  }
+
+  .letreiro-ui {
+    padding-inline: 11px;
+  }
+
+  .letreiro-answer-row span {
+    width: 24px;
+    height: 24px;
+  }
+
+  .letreiro-keyboard b {
+    height: 25px;
+    font-size: 6.5px;
+  }
+
+  .letreiro-keyboard .key-enter {
+    height: 27px;
+  }
+
+  .lista-real-main {
+    width: 90%;
+    margin-top: 36px;
+  }
+
+  .lista-real-controls {
+    grid-template-columns: minmax(0, 1fr) 43px 40px;
+    gap: 4px;
+  }
+}
