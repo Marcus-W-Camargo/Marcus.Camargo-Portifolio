@@ -70,6 +70,8 @@ export function ProjectPreview({ variant }: Props) {
 
   return (
     <div className="mock-browser mock-browser-lista lista-real-preview">
+      <div className="browser-bar lista-browser-bar"><i /><i /><i /></div>
+
       <div className="lista-real-scene">
         <img className="lista-real-logo-image" src={listeLogo} alt="" />
 
