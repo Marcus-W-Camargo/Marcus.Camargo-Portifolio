@@ -143,11 +143,7 @@ function App() {
           <div className="brand-showcase-inner">
             <div className="brand-showcase-copy">
               <span className="section-kicker">Identidade</span>
-              <h2>Uma marca voltada para tecnologia, proximidade e soluções digitais.</h2>
-              <p>
-                Desenvolvimento com identidade própria, comunicação direta e foco em
-                experiências modernas para web.
-              </p>
+              <h2>Conheça a identidade visual do meu trabalho.</h2>
             </div>
             <div className="brand-logo-panel">
               <img src={identityImage} alt="Identidade visual Marcus Camargo Portfólio" />
