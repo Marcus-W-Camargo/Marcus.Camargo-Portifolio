@@ -15,4 +15,14 @@
   .eyebrow {
     font-size: 13px;
   }
+
+  .hero .eyebrow {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero .eyebrow span {
+    display: none;
+  }
 }
