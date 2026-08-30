@@ -118,7 +118,11 @@ function App() {
               <div className="orbit-dot dot-two" />
               <div
                 className="hero-profile-card"
-                style={{ background: '#fff', padding: '18px' }}
+                style={{
+                  background: '#fff',
+                  padding: '18px',
+                  transform: 'none',
+                }}
               >
                 <img
                   src={logo}
