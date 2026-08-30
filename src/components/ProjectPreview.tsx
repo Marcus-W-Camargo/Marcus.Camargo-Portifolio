@@ -11,9 +11,10 @@ export function ProjectPreview({ variant }: Props) {
         <div className="browser-bar letreiro-browser-bar"><i /><i /><i /></div>
         <div className="letreiro-ui">
           <div className="letreiro-topline">
-            <span className="letreiro-clapper" aria-hidden="true">🎬</span>
-            <span className="letreiro-title">LETREIRO</span>
-            <span className="letreiro-topline-spacer" aria-hidden="true" />
+            <div className="letreiro-brand-lockup">
+              <span className="letreiro-clapper" aria-hidden="true">🎬</span>
+              <span className="letreiro-title">LETREIRO</span>
+            </div>
           </div>
 
           <div className="letreiro-clue">Descubra o filme pelas dicas</div>
@@ -35,11 +36,19 @@ export function ProjectPreview({ variant }: Props) {
           </div>
 
           <div className="mini-keyboard letreiro-keyboard">
-            {['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'].map((row) => (
-              <div className="mini-keyboard-row" key={row}>
-                {row.split('').map((letter) => <b key={letter}>{letter}</b>)}
-              </div>
-            ))}
+            <div className="mini-keyboard-row row-one">
+              {'QWERTYUIOP'.split('').map((letter) => <b key={letter}>{letter}</b>)}
+            </div>
+            <div className="mini-keyboard-row row-two">
+              {'ASDFGHJKL'.split('').map((letter) => <b key={letter}>{letter}</b>)}
+            </div>
+            <div className="mini-keyboard-row row-three">
+              {'ZXCVBNM'.split('').map((letter) => <b key={letter}>{letter}</b>)}
+              <b className="key-backspace" aria-label="Apagar">⌫</b>
+            </div>
+            <div className="mini-keyboard-row row-enter">
+              <b className="key-enter">ENTER</b>
+            </div>
           </div>
         </div>
       </div>
