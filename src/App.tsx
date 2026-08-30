@@ -9,12 +9,15 @@ import {
   PanelsTopLeft,
   Workflow,
 } from 'lucide-react'
-import logo from './assets/logo.png'
-import profile from './assets/perfil.jpg'
+import logoBase64 from './assets/logo-base64.txt?raw'
+import profileBase64 from './assets/profile-base64.txt?raw'
 import { Header } from './components/Header'
 import { ProjectPreview } from './components/ProjectPreview'
 import { SectionHeading } from './components/SectionHeading'
 import { projects } from './data/projects'
+
+const logo = `data:image/png;base64,${logoBase64.trim()}`
+const profile = `data:image/jpeg;base64,${profileBase64.trim()}`
 
 const services = [
   {
