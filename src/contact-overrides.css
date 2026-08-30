@@ -1,0 +1,11 @@
+.contact-copy .section-kicker {
+  color: #ff4ca6;
+  font-size: 14px;
+  letter-spacing: .17em;
+}
+
+@media (max-width: 760px) {
+  .contact-copy .section-kicker {
+    font-size: 13px;
+  }
+}
