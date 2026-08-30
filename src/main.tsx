@@ -14,6 +14,7 @@ import './liste-closed-state-overrides.css'
 import './preview-harmony-overrides.css'
 import './mobile-project-preview-overrides.css'
 import './letreiro-keyboard-layout-overrides.css'
+import './logo-overrides.css'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(
