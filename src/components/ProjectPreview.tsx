@@ -62,21 +62,10 @@ export function ProjectPreview({ variant }: Props) {
   }
 
   const items = [
-    ['Arroz', '🟨 Mercearia', '2'],
-    ['Feijão', '🟨 Mercearia', '0,500'],
-    ['Leite', '🥛 Laticínios', '0,700'],
-    ['Nutella', '📦 Outros', '1'],
-  ]
-
-  const categories = [
-    '🟨 Mercearia',
-    '🍎 Hortifrúti',
-    '🥩 Açougue',
-    '🥤 Bebidas',
-    '🥛 Laticínios',
-    '🧹 Limpeza',
-    '🧼 Higiene',
-    '📦 Outros',
+    ['Arroz', '🟨 Mercearia', '2', '📦'],
+    ['Feijão', '🟨 Mercearia', '0,500', '⚖️'],
+    ['Leite', '🥛 Laticínios', '0,700', '⚖️'],
+    ['Nutella', '📦 Outros', '1', '📦'],
   ]
 
   return (
@@ -113,8 +102,7 @@ export function ProjectPreview({ variant }: Props) {
 
           <div className="lista-real-formcard">
             <label>Nome do Produto</label>
-            <div className="lista-real-input"><span>Maçã ver</span><i /></div>
-            <div className="lista-real-suggestion"><strong>Maçã Verde</strong></div>
+            <div className="lista-real-input">Maçã ver</div>
 
             <div className="lista-real-controls">
               <div className="lista-control-category">
@@ -125,14 +113,10 @@ export function ProjectPreview({ variant }: Props) {
                 <span>2</span>
                 <i><b>+</b><b>−</b></i>
               </div>
-              <div className="lista-control-switch"><span>⚖</span></div>
+              <div className="lista-control-switch"><span>📦</span></div>
             </div>
 
             <button className="lista-real-add" type="button" disabled>Adicionar à Lista</button>
-
-            <div className="lista-category-dropdown">
-              {categories.map((category) => <span key={category}>{category}</span>)}
-            </div>
           </div>
 
           <div className="lista-real-listcard">
@@ -143,7 +127,7 @@ export function ProjectPreview({ variant }: Props) {
             </div>
 
             <div className="lista-real-items">
-              {items.map(([name, category, quantity]) => (
+              {items.map(([name, category, quantity, unitIcon]) => (
                 <div className="lista-real-item" key={name}>
                   <span className="lista-real-item-info">
                     <b>{name}</b>
@@ -153,7 +137,7 @@ export function ProjectPreview({ variant }: Props) {
                     <em>{quantity}</em>
                     <i><b>+</b><b>−</b></i>
                   </span>
-                  <span className="lista-mini-switch"><i /></span>
+                  <span className="lista-mini-switch"><i>{unitIcon}</i></span>
                   <span className="lista-mini-trash">🗑</span>
                 </div>
               ))}
