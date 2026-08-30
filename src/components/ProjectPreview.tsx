@@ -1,4 +1,10 @@
 import type { Project } from '../data/projects'
+import profile from '../assets/Perfil Marcus Camargo - Portifolio.png'
+
+const listeLogo =
+  'https://raw.githubusercontent.com/Marcus-W-Camargo/liste-e-compre/main/src/assets/liste-%26-compre.png'
+const listeIcon =
+  'https://raw.githubusercontent.com/Marcus-W-Camargo/liste-e-compre/main/src/assets/Liste.png'
 
 type Props = {
   variant: Project['variant']
@@ -55,56 +61,110 @@ export function ProjectPreview({ variant }: Props) {
     )
   }
 
+  const items = [
+    ['Arroz', '🟨 Mercearia', '2'],
+    ['Feijão', '🟨 Mercearia', '0,500'],
+    ['Leite', '🥛 Laticínios', '0,700'],
+    ['Nutella', '📦 Outros', '1'],
+  ]
+
+  const categories = [
+    '🟨 Mercearia',
+    '🍎 Hortifrúti',
+    '🥩 Açougue',
+    '🥤 Bebidas',
+    '🥛 Laticínios',
+    '🧹 Limpeza',
+    '🧼 Higiene',
+    '📦 Outros',
+  ]
+
   return (
     <div className="mock-browser mock-browser-lista lista-real-preview">
       <div className="lista-real-scene">
-        <span className="lista-real-doodle doodle-one">🍅</span>
-        <span className="lista-real-doodle doodle-two">🥕</span>
-        <span className="lista-real-doodle doodle-three">🍐</span>
-        <span className="lista-real-doodle doodle-four">🍄</span>
+        <img className="lista-real-logo-image" src={listeLogo} alt="" />
 
-        <div className="lista-real-logo">Liste &amp;<br />Compre</div>
-        <div className="lista-real-user">Olá, Marcus <span>👤</span></div>
-
-        <div className="lista-real-sidecard">
-          <strong>📋 Minhas Listas</strong>
-          <div className="lista-real-sideitem">
-            <span><b>Final de Semana</b><small>4 itens</small></span>
-            <em>✎</em>
-          </div>
+        <div className="lista-real-user">
+          <strong>Olá, Marcus Camargo.</strong>
+          <img src={profile} alt="" />
         </div>
 
+        <aside className="lista-real-sidecard">
+          <div className="lista-real-side-title">📋 <strong>Minhas Listas</strong></div>
+          <div className="lista-real-side-divider" />
+          <div className="lista-real-sideitem">
+            <div className="lista-real-side-info">
+              <div className="lista-real-side-name">
+                <b>Final de Semana</b>
+                <span>✏️</span>
+              </div>
+              <small>4 itens</small>
+              <small className="modified">Modificada em 30/08/2026</small>
+            </div>
+            <div className="lista-real-side-trash">🗑</div>
+          </div>
+        </aside>
+
         <div className="lista-real-main">
-          <h3>🛒 Criar Lista</h3>
+          <div className="lista-real-page-title">
+            <img src={listeIcon} alt="" />
+            <strong>Criar Lista</strong>
+          </div>
 
           <div className="lista-real-formcard">
             <label>Nome do Produto</label>
-            <div className="lista-real-input">Maçã ver</div>
-            <div className="lista-real-suggestion">Maçã Verde</div>
+            <div className="lista-real-input"><span>Maçã ver</span><i /></div>
+            <div className="lista-real-suggestion"><strong>Maçã Verde</strong></div>
 
             <div className="lista-real-controls">
-              <div><small>Categoria</small><b>🍎 Hortifruti</b></div>
-              <div><small>Qtd.</small><b>2</b></div>
-              <div className="lista-real-toggle">kg</div>
+              <div className="lista-control-category">
+                <span>🍎 Categorias</span>
+                <i>⌄</i>
+              </div>
+              <div className="lista-control-qty">
+                <span>2</span>
+                <i><b>+</b><b>−</b></i>
+              </div>
+              <div className="lista-control-switch"><span>⚖</span></div>
             </div>
 
-            <button className="lista-real-add" type="button">Adicionar à Lista</button>
+            <button className="lista-real-add" type="button" disabled>Adicionar à Lista</button>
+
+            <div className="lista-category-dropdown">
+              {categories.map((category) => <span key={category}>{category}</span>)}
+            </div>
           </div>
 
           <div className="lista-real-listcard">
-            <div className="lista-real-listhead">
-              <span>Itens da Lista</span>
+            <div className="lista-real-list-toolbar">
+              <strong>Itens da Lista</strong>
+              <span className="lista-real-filter">Geral (Todos)⌄</span>
               <b>4 itens</b>
             </div>
-            <div className="lista-real-chip">Geral (Todos)⌄</div>
 
-            <div className="lista-real-item"><span><b>Arroz</b><small>🟨 Mercearia</small></span><em>2</em><i>🗑</i></div>
-            <div className="lista-real-item"><span><b>Feijão</b><small>🟨 Mercearia</small></span><em>0,700</em><i>🗑</i></div>
-            <div className="lista-real-item"><span><b>Leite</b><small>🥛 Laticínios</small></span><em>2</em><i>🗑</i></div>
-            <div className="lista-real-item"><span><b>Nutella</b><small>📦 Outros</small></span><em>1</em><i>🗑</i></div>
+            <div className="lista-real-items">
+              {items.map(([name, category, quantity]) => (
+                <div className="lista-real-item" key={name}>
+                  <span className="lista-real-item-info">
+                    <b>{name}</b>
+                    <small>{category}</small>
+                  </span>
+                  <span className="lista-mini-spinner">
+                    <em>{quantity}</em>
+                    <i><b>+</b><b>−</b></i>
+                  </span>
+                  <span className="lista-mini-switch"><i /></span>
+                  <span className="lista-mini-trash">🗑</span>
+                </div>
+              ))}
+            </div>
 
             <button className="lista-real-save" type="button">💾 Salvar Lista</button>
           </div>
+        </div>
+
+        <div className="lista-real-footer">
+          © 2026 Marcus Camargo. Todos os direitos reservados.
         </div>
       </div>
     </div>
