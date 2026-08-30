@@ -9,7 +9,7 @@ import {
   PanelsTopLeft,
   Workflow,
 } from 'lucide-react'
-import logo from './assets/LogoTipo Marcus Marcus - Portifolio.png'
+import logo from './assets/Marcus-Camargo-Logo-Transparente.png'
 import identityImage from './assets/Identidade Marcus Camargo - Portifolio.png'
 import { Header } from './components/Header'
 import { ProjectPreview } from './components/ProjectPreview'
@@ -144,22 +144,11 @@ function App() {
               <div className="orbit orbit-two" />
               <div className="orbit-dot dot-one" />
               <div className="orbit-dot dot-two" />
-              <div
-                className="hero-profile-card"
-                style={{
-                  background: '#fff',
-                  padding: '18px',
-                  transform: 'none',
-                }}
-              >
+              <div className="hero-profile-card hero-logo-card">
                 <img
+                  className="hero-logo-image"
                   src={logo}
                   alt="Logomarca Marcus Camargo Portfólio"
-                  style={{
-                    objectFit: 'contain',
-                    objectPosition: 'center',
-                    borderRadius: '22px',
-                  }}
                 />
               </div>
             </div>
@@ -318,7 +307,7 @@ function App() {
 
       <footer>
         <a href="#inicio" className="footer-brand">
-          <img src={logo} alt="" />
+          <img className="footer-logo-transparent" src={logo} alt="" />
           <span>Marcus Camargo Portfólio</span>
         </a>
         <p>Desenvolvimento web • Aplicações • Integrações • Automação</p>
