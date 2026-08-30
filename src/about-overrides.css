@@ -1,0 +1,27 @@
+.about-copy {
+  gap: 18px;
+}
+
+.about-copy p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #f4eef7;
+}
+
+.about-copy p:first-child {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--pink-2);
+}
+
+@media (max-width: 760px) {
+  .about-copy p {
+    font-size: 16px;
+  }
+
+  .about-copy p:first-child {
+    font-size: 18px;
+  }
+}
