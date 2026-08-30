@@ -1,0 +1,71 @@
+.project-letreiro .project-preview {
+  background: linear-gradient(
+    180deg,
+    #0b0f19 0%,
+    #151828 42%,
+    #ebe4d6 100%
+  );
+}
+
+.mock-browser-letreiro {
+  background: #0b0f19;
+}
+
+.letreiro-ui {
+  background: linear-gradient(
+    180deg,
+    #0b0f19 0%,
+    #0b0f19 42%,
+    #ebe4d6 78%,
+    #ebe4d6 100%
+  );
+}
+
+/* A metade inferior representa o tema claro oficial do Letreiro. */
+.letreiro-keyboard b {
+  border-color: rgba(138, 127, 108, .72);
+  background: #d4cbb8;
+  color: #1c1914;
+  box-shadow: 0 2px 4px rgba(60, 40, 20, .22);
+}
+
+.letreiro-keyboard b::before,
+.letreiro-keyboard b::after {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(28, 25, 20, .28),
+    rgba(28, 25, 20, .28) 3px,
+    transparent 3px,
+    transparent 7px
+  );
+}
+
+.letreiro-keyboard .key-backspace,
+.letreiro-keyboard .key-enter {
+  border-color: rgba(138, 127, 108, .8);
+  background: #c2b79f;
+  color: #1c1914;
+}
+
+/* Mantém a área real do Liste & Compre e acrescenta apenas a moldura do navegador. */
+.lista-real-preview {
+  aspect-ratio: 1.35;
+}
+
+.lista-real-preview > .lista-browser-bar {
+  position: relative;
+  z-index: 20;
+  height: 38px;
+  flex: 0 0 38px;
+}
+
+.lista-real-preview > .lista-real-scene {
+  height: calc(100% - 38px);
+  min-height: 0;
+}
+
+@media (max-width: 760px) {
+  .lista-real-preview {
+    aspect-ratio: 1.18;
+  }
+}
