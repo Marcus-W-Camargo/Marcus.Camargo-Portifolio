@@ -7,18 +7,38 @@ type Props = {
 export function ProjectPreview({ variant }: Props) {
   if (variant === 'letreiro') {
     return (
-      <div className="mock-browser">
-        <div className="browser-bar"><i /><i /><i /></div>
+      <div className="mock-browser mock-browser-letreiro">
+        <div className="browser-bar letreiro-browser-bar"><i /><i /><i /></div>
         <div className="letreiro-ui">
-          <span className="mini-label">Jogo diário</span>
-          <h3>LETREIRO</h3>
-          <div className="letter-row">
+          <div className="letreiro-topline">
+            <span>LETREIRO</span>
+            <small>filme do dia</small>
+          </div>
+
+          <div className="letreiro-clue">Descubra o filme pelas dicas</div>
+
+          <div className="letter-row letreiro-answer-row">
             {'LETREIRO'.split('').map((letter, index) => (
-              <span key={`${letter}-${index}`}>{letter}</span>
+              <span
+                className={index === 2 ? 'tile-hit' : index === 5 ? 'tile-warn' : ''}
+                key={`${letter}-${index}`}
+              >
+                {letter}
+              </span>
             ))}
           </div>
-          <div className="mini-keyboard">
-            {'QWERTYUIOP'.split('').map((letter) => <b key={letter}>{letter}</b>)}
+
+          <div className="letreiro-history">
+            <div><span>Diretor</span><strong>••••••</strong></div>
+            <div><span>Ano</span><strong>2010 — 2025</strong></div>
+          </div>
+
+          <div className="mini-keyboard letreiro-keyboard">
+            {['QWERTYUIOP', 'ASDFGHJKL', 'ZXCVBNM'].map((row) => (
+              <div className="mini-keyboard-row" key={row}>
+                {row.split('').map((letter) => <b key={letter}>{letter}</b>)}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -26,18 +46,28 @@ export function ProjectPreview({ variant }: Props) {
   }
 
   return (
-    <div className="mock-browser">
-      <div className="browser-bar"><i /><i /><i /></div>
+    <div className="mock-browser mock-browser-lista">
+      <div className="browser-bar lista-browser-bar"><i /><i /><i /></div>
       <div className="lista-ui">
         <div className="lista-head">
           <strong>Liste e Compre</strong>
-          <span>Compras</span>
+          <span>Minha lista</span>
         </div>
-        <div className="lista-item"><i>✓</i><span>Arroz</span><b>2 un</b></div>
-        <div className="lista-item"><i>✓</i><span>Feijão</span><b>1 kg</b></div>
-        <div className="lista-item"><i /><span>Leite</span><b>6 un</b></div>
+
+        <div className="lista-summary">
+          <div><small>Itens</small><strong>4</strong></div>
+          <div><small>Estimativa</small><strong>R$ 148,90</strong></div>
+        </div>
+
+        <div className="lista-items">
+          <div className="lista-item"><i>✓</i><span><b>Arroz</b><small>Mercearia</small></span><em>2 un</em></div>
+          <div className="lista-item"><i>✓</i><span><b>Feijão</b><small>Mercearia</small></span><em>1 kg</em></div>
+          <div className="lista-item"><i>✓</i><span><b>Leite</b><small>Laticínios</small></span><em>6 un</em></div>
+          <div className="lista-item"><i>✓</i><span><b>Café</b><small>Mercearia</small></span><em>1 un</em></div>
+        </div>
+
         <div className="lista-total">
-          Total estimado
+          <span>Total estimado</span>
           <strong>R$ 148,90</strong>
         </div>
       </div>
