@@ -3,6 +3,7 @@ import {
   Bot,
   Braces,
   Database,
+  Github,
   Globe2,
   Instagram,
   MessageCircleMore,
@@ -83,6 +84,15 @@ function App() {
               </a>
               <a className="button button-secondary" href="#contato">
                 Falar comigo
+              </a>
+              <a
+                className="button button-github"
+                href="https://github.com/Marcus-W-Camargo?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Github size={18} />
+                GitHub
               </a>
             </div>
 
@@ -277,7 +287,7 @@ function App() {
             </div>
 
             <p className="contact-note">
-              Escolha o canal que preferir para entrar em contato.
+              Escolha o canal que preferir para entrar em contato comigo.
             </p>
           </div>
         </section>
