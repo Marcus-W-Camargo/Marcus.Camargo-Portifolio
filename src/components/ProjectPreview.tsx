@@ -11,8 +11,9 @@ export function ProjectPreview({ variant }: Props) {
         <div className="browser-bar letreiro-browser-bar"><i /><i /><i /></div>
         <div className="letreiro-ui">
           <div className="letreiro-topline">
-            <span>LETREIRO</span>
-            <small>filme do dia</small>
+            <span className="letreiro-clapper" aria-hidden="true">🎬</span>
+            <span className="letreiro-title">LETREIRO</span>
+            <span className="letreiro-topline-spacer" aria-hidden="true" />
           </div>
 
           <div className="letreiro-clue">Descubra o filme pelas dicas</div>
@@ -29,8 +30,8 @@ export function ProjectPreview({ variant }: Props) {
           </div>
 
           <div className="letreiro-history">
-            <div><span>Diretor</span><strong>••••••</strong></div>
-            <div><span>Ano</span><strong>2010 — 2025</strong></div>
+            <div><span>Estúdio</span><strong>Marvel</strong></div>
+            <div><span>Categoria</span><strong>Ação e Ficção Científica</strong></div>
           </div>
 
           <div className="mini-keyboard letreiro-keyboard">
