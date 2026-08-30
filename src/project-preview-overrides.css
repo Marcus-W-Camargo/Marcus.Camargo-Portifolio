@@ -160,6 +160,11 @@
 .letreiro-keyboard b::before { top: 3px; }
 .letreiro-keyboard b::after { bottom: 3px; }
 
+.letreiro-keyboard .key-enter::before,
+.letreiro-keyboard .key-enter::after {
+  content: none;
+}
+
 .row-two { padding-inline: 17px; }
 .row-three { padding-inline: 34px; }
 
