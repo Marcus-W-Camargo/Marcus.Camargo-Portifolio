@@ -40,19 +40,13 @@ const services = [
 ]
 
 const contactLinks = {
-  whatsapp: '',
-  instagram: '',
+  whatsapp: 'https://wa.me/message/S2FPE7ASPUHHM1',
+  instagram: 'https://www.instagram.com/marcus.camargo_portifolio?igsi=ZmdpOTdzNmIzY25p',
 }
 
 function App() {
   const openContact = (type: keyof typeof contactLinks) => {
     const url = contactLinks[type]
-
-    if (!url) {
-      window.alert('Contato ainda não configurado. Adicione seu link oficial em App.tsx.')
-      return
-    }
-
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
@@ -283,8 +277,7 @@ function App() {
             </div>
 
             <p className="contact-note">
-              Os links de WhatsApp e Instagram ficam prontos para receber seus
-              endereços oficiais.
+              Escolha o canal que preferir para entrar em contato.
             </p>
           </div>
         </section>
