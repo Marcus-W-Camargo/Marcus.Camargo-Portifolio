@@ -8,6 +8,7 @@ import './contact-overrides.css'
 import './section-kicker-overrides.css'
 import './header-overrides.css'
 import './github-button-overrides.css'
+import './project-preview-overrides.css'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(
