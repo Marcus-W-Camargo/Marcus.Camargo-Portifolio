@@ -1,3 +1,9 @@
+.about-panel h2 {
+  color: var(--pink-2);
+  font-size: clamp(46px, 5.2vw, 70px);
+  line-height: 1.02;
+}
+
 .about-copy {
   gap: 18px;
 }
@@ -13,10 +19,14 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 1.7;
-  color: var(--pink-2);
+  color: #f7f2f9;
 }
 
 @media (max-width: 760px) {
+  .about-panel h2 {
+    font-size: clamp(40px, 12vw, 56px);
+  }
+
   .about-copy p {
     font-size: 16px;
   }
