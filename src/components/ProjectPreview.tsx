@@ -59,26 +59,28 @@ export function ProjectPreview({ variant }: Props) {
     <div className="mock-browser mock-browser-lista">
       <div className="browser-bar lista-browser-bar"><i /><i /><i /></div>
       <div className="lista-ui">
-        <div className="lista-head">
-          <strong>Liste &amp; Compre</strong>
-          <span>Minha lista</span>
-        </div>
+        <div className="lista-app-panel">
+          <div className="lista-head">
+            <strong>Liste &amp; Compre</strong>
+            <span>Minha lista</span>
+          </div>
 
-        <div className="lista-summary">
-          <div><small>Itens</small><strong>4</strong></div>
-          <div><small>Estimativa</small><strong>R$ 148,90</strong></div>
-        </div>
+          <div className="lista-summary">
+            <div><small>Itens</small><strong>4</strong></div>
+            <div><small>Estimativa</small><strong>R$ 148,90</strong></div>
+          </div>
 
-        <div className="lista-items">
-          <div className="lista-item"><i>✓</i><span><b>Arroz</b><small>Mercearia</small></span><em>2 un</em></div>
-          <div className="lista-item"><i>✓</i><span><b>Feijão</b><small>Mercearia</small></span><em>1 kg</em></div>
-          <div className="lista-item"><i>✓</i><span><b>Leite</b><small>Laticínios</small></span><em>6 un</em></div>
-          <div className="lista-item"><i>✓</i><span><b>Café</b><small>Mercearia</small></span><em>1 un</em></div>
-        </div>
+          <div className="lista-items">
+            <div className="lista-item"><i>✓</i><span><b>Arroz</b><small>Mercearia</small></span><em>2 un</em></div>
+            <div className="lista-item"><i>✓</i><span><b>Feijão</b><small>Mercearia</small></span><em>1 kg</em></div>
+            <div className="lista-item"><i>✓</i><span><b>Leite</b><small>Laticínios</small></span><em>6 un</em></div>
+            <div className="lista-item"><i>✓</i><span><b>Café</b><small>Mercearia</small></span><em>1 un</em></div>
+          </div>
 
-        <div className="lista-total">
-          <span>Total estimado</span>
-          <strong>R$ 148,90</strong>
+          <div className="lista-total">
+            <span>Total estimado</span>
+            <strong>R$ 148,90</strong>
+          </div>
         </div>
       </div>
     </div>
