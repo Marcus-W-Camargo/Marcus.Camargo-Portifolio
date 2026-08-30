@@ -10,6 +10,7 @@ import {
   Workflow,
 } from 'lucide-react'
 import logo from './assets/LogoTipo Marcus Marcus - Portifolio.png'
+import identityImage from './assets/Identidade Marcus Camargo - Portifolio.png'
 import { Header } from './components/Header'
 import { ProjectPreview } from './components/ProjectPreview'
 import { SectionHeading } from './components/SectionHeading'
@@ -149,7 +150,7 @@ function App() {
               </p>
             </div>
             <div className="brand-logo-panel">
-              <img src={logo} alt="Logomarca Marcus Camargo Portfólio" />
+              <img src={identityImage} alt="Identidade visual Marcus Camargo Portfólio" />
             </div>
           </div>
         </section>
