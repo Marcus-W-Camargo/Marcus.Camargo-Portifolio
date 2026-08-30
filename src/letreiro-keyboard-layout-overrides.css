@@ -1,0 +1,130 @@
+/*
+ * Ajustes exclusivos do teclado do preview do Letreiro.
+ * Mantém o conteúdo principal no topo e reserva o espaço central para
+ * as tentativas, aproximando o teclado do rodapé da tela emulada.
+ */
+
+.mock-browser-letreiro {
+  display: flex;
+  flex-direction: column;
+}
+
+.mock-browser-letreiro > .letreiro-browser-bar {
+  flex: 0 0 38px;
+}
+
+.letreiro-ui {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 38px);
+  min-height: 0;
+}
+
+.letreiro-keyboard {
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (max-width: 760px) {
+  .mock-browser-letreiro > .letreiro-browser-bar {
+    flex-basis: 32px;
+  }
+
+  .letreiro-ui {
+    height: calc(100% - 32px);
+  }
+
+  .letreiro-keyboard {
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
+    margin-top: auto;
+    padding: 0 2px 2px;
+    box-sizing: border-box;
+  }
+
+  .mini-keyboard-row {
+    width: 100%;
+    gap: 4px;
+  }
+
+  .letreiro-keyboard .row-one {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .letreiro-keyboard .row-two {
+    width: 95%;
+    max-width: 95%;
+    padding-inline: 0;
+  }
+
+  .letreiro-keyboard .row-three {
+    width: 90%;
+    max-width: 90%;
+    padding-inline: 0;
+  }
+
+  .letreiro-keyboard .row-enter {
+    width: 78%;
+    max-width: 78%;
+  }
+
+  .letreiro-keyboard b {
+    width: 0;
+    min-width: 0;
+    max-width: none;
+    height: 32px;
+    flex: 1 1 0;
+    font-size: 8px;
+  }
+
+  .letreiro-keyboard .key-backspace {
+    width: 0;
+    max-width: none;
+    flex: 1.35 1 0;
+    font-size: 12px;
+  }
+
+  .letreiro-keyboard .key-enter {
+    width: 100%;
+    max-width: none;
+    height: 34px;
+    flex: 1 1 auto;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 390px) {
+  .letreiro-keyboard {
+    padding-inline: 0;
+  }
+
+  .mini-keyboard-row {
+    gap: 3px;
+  }
+
+  .letreiro-keyboard .row-two {
+    width: 96%;
+    max-width: 96%;
+  }
+
+  .letreiro-keyboard .row-three {
+    width: 91%;
+    max-width: 91%;
+  }
+
+  .letreiro-keyboard .row-enter {
+    width: 80%;
+    max-width: 80%;
+  }
+
+  .letreiro-keyboard b {
+    height: 30px;
+    font-size: 7.5px;
+  }
+
+  .letreiro-keyboard .key-enter {
+    height: 32px;
+  }
+}
