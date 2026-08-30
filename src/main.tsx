@@ -10,6 +10,7 @@ import './header-overrides.css'
 import './github-button-overrides.css'
 import './project-preview-overrides.css'
 import './liste-real-preview.css'
+import './liste-closed-state-overrides.css'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(
