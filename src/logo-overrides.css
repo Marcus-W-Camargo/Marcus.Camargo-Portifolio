@@ -1,0 +1,46 @@
+/* Ajustes da nova logomarca transparente. */
+
+.hero-logo-card {
+  width: 78%;
+  aspect-ratio: 1;
+  padding: 22px;
+  background: transparent;
+  border: 1px solid rgba(255, 76, 166, .42);
+  border-radius: 34px;
+  box-shadow:
+    0 30px 75px rgba(0, 0, 0, .30),
+    0 0 0 1px rgba(255, 255, 255, .04),
+    0 0 55px rgba(255, 10, 120, .14);
+  transform: none;
+}
+
+.hero-logo-card .hero-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+}
+
+.footer-brand .footer-logo-transparent {
+  width: 46px;
+  height: 46px;
+  padding: 2px;
+  object-fit: contain;
+  border: 1px solid rgba(255, 76, 166, .28);
+  border-radius: 12px;
+  background: transparent;
+}
+
+@media (max-width: 760px) {
+  .hero-logo-card {
+    width: 82%;
+    padding: 16px;
+    border-radius: 28px;
+  }
+
+  .footer-brand .footer-logo-transparent {
+    width: 42px;
+    height: 42px;
+  }
+}
