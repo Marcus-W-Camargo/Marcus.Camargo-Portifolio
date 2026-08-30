@@ -60,7 +60,7 @@ export function ProjectPreview({ variant }: Props) {
       <div className="browser-bar lista-browser-bar"><i /><i /><i /></div>
       <div className="lista-ui">
         <div className="lista-head">
-          <strong>Liste e Compre</strong>
+          <strong>Liste &amp; Compre</strong>
           <span>Minha lista</span>
         </div>
 
