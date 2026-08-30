@@ -34,26 +34,33 @@
 }
 
 .letreiro-topline {
-  display: flex;
+  display: grid;
+  grid-template-columns: 34px 1fr 34px;
   align-items: center;
-  justify-content: space-between;
   padding-bottom: 12px;
   border-bottom: 1px solid #27272a;
 }
 
-.letreiro-topline span {
+.letreiro-clapper {
+  justify-self: start;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.letreiro-title {
+  justify-self: center;
   font-size: 13px;
   font-weight: 900;
   letter-spacing: .22em;
 }
 
-.letreiro-topline small,
-.letreiro-clue {
-  color: #8b90a8;
-  font-size: 9px;
+.letreiro-topline-spacer {
+  width: 34px;
 }
 
 .letreiro-clue {
+  color: #8b90a8;
+  font-size: 9px;
   margin: 18px 0 14px;
 }
 
@@ -82,10 +89,14 @@
 }
 
 .letreiro-history div {
+  min-height: 52px;
   padding: 9px;
   border: 1px solid #27272a;
   border-radius: 8px;
   background: #151828;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .letreiro-history span,
@@ -104,6 +115,7 @@
 .letreiro-history strong {
   color: #f4efe4;
   font-size: 9px;
+  line-height: 1.25;
 }
 
 .letreiro-keyboard {
