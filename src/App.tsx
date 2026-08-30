@@ -82,8 +82,8 @@ function App() {
                 Conhecer projetos
                 <ArrowUpRight size={18} />
               </a>
-              <a className="button button-secondary" href="#contato">
-                Falar comigo
+              <a className="button button-secondary button-contact-animated" href="#contato">
+                Fale comigo
               </a>
               <a
                 className="button button-github"
@@ -287,7 +287,7 @@ function App() {
             </div>
 
             <p className="contact-note">
-              Escolha o canal que preferir para entrar em contato comigo.
+              Escolha o canal que preferir e fale comigo diretamente.
             </p>
           </div>
         </section>
