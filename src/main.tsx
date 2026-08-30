@@ -6,6 +6,7 @@ import './hero-stats-overrides.css'
 import './about-overrides.css'
 import './contact-overrides.css'
 import './section-kicker-overrides.css'
+import './header-overrides.css'
 import App from './App'
 
 createRoot(document.getElementById('root')!).render(
