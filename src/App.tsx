@@ -10,7 +10,6 @@ import {
   Workflow,
 } from 'lucide-react'
 import logo from './assets/LogoTipo Marcus Marcus - Portifolio.png'
-import profile from './assets/Perfil Marcus Camargo - Portifolio.png'
 import { Header } from './components/Header'
 import { ProjectPreview } from './components/ProjectPreview'
 import { SectionHeading } from './components/SectionHeading'
@@ -117,12 +116,19 @@ function App() {
               <div className="orbit orbit-two" />
               <div className="orbit-dot dot-one" />
               <div className="orbit-dot dot-two" />
-              <div className="hero-profile-card">
-                <img src={profile} alt="Marcus Camargo" />
-                <div className="profile-caption">
-                  <span>Marcus Camargo</span>
-                  <small>Desenvolvimento & Soluções Digitais</small>
-                </div>
+              <div
+                className="hero-profile-card"
+                style={{ background: '#fff', padding: '18px' }}
+              >
+                <img
+                  src={logo}
+                  alt="Logomarca Marcus Camargo Portfólio"
+                  style={{
+                    objectFit: 'contain',
+                    objectPosition: 'center',
+                    borderRadius: '22px',
+                  }}
+                />
               </div>
             </div>
           </div>
