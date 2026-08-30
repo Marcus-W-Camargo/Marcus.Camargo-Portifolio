@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import logo from '../assets/logo.png'
+import logoBase64 from '../assets/logo-base64.txt?raw'
+
+const logo = `data:image/png;base64,${logoBase64.trim()}`
 
 const links = [
   ['Início', 'inicio'],
