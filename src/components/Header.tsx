@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import profileBase64 from '../assets/profile-base64.txt?raw'
-
-const profile = `data:image/jpeg;base64,${profileBase64.trim()}`
+import profile from '../assets/Perfil Marcus Camargo - Portifolio.png'
 
 const links = [
   ['Início', 'inicio'],
