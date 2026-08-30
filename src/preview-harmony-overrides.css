@@ -1,0 +1,132 @@
+.project-letreiro .project-preview {
+  background: linear-gradient(
+    145deg,
+    #0b0f19 0%,
+    #151828 42%,
+    #ebe4d6 100%
+  );
+}
+
+.mock-browser-letreiro {
+  background: #0b0f19;
+}
+
+.letreiro-ui {
+  background: linear-gradient(
+    145deg,
+    #0b0f19 0%,
+    #0b0f19 42%,
+    #ebe4d6 78%,
+    #ebe4d6 100%
+  );
+}
+
+/* Dicas acompanham a diagonal: esquerda no tema escuro, direita no tema claro. */
+.letreiro-history div:first-child {
+  border-color: #27272a;
+  background: #151828;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .22);
+}
+
+.letreiro-history div:first-child span {
+  color: #8b90a8;
+}
+
+.letreiro-history div:first-child strong {
+  color: #f4efe4;
+}
+
+.letreiro-history div:last-child {
+  border-color: #b5aa96;
+  background: #f7f1e6;
+  box-shadow: 0 2px 4px rgba(60, 40, 20, .16);
+}
+
+.letreiro-history div:last-child span {
+  color: #5c554a;
+}
+
+.letreiro-history div:last-child strong {
+  color: #1c1914;
+}
+
+/* Teclas começam com a identidade oficial do tema escuro. */
+.letreiro-keyboard b {
+  border-color: rgba(58, 58, 60, .78);
+  background: #2b304c;
+  color: #f4efe4;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .32);
+}
+
+.letreiro-keyboard b::before,
+.letreiro-keyboard b::after {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, .18),
+    rgba(255, 255, 255, .18) 3px,
+    transparent 3px,
+    transparent 7px
+  );
+}
+
+/* A fronteira diagonal cruza cada fileira em um ponto diferente. */
+.letreiro-keyboard .row-one b:nth-child(n + 7),
+.letreiro-keyboard .row-two b:nth-child(n + 5),
+.letreiro-keyboard .row-three b:nth-child(n + 3),
+.letreiro-keyboard .row-enter b {
+  border-color: rgba(138, 127, 108, .8);
+  background: #d4cbb8;
+  color: #1c1914;
+  box-shadow: 0 2px 4px rgba(60, 40, 20, .22);
+}
+
+.letreiro-keyboard .row-one b:nth-child(n + 7)::before,
+.letreiro-keyboard .row-one b:nth-child(n + 7)::after,
+.letreiro-keyboard .row-two b:nth-child(n + 5)::before,
+.letreiro-keyboard .row-two b:nth-child(n + 5)::after,
+.letreiro-keyboard .row-three b:nth-child(n + 3)::before,
+.letreiro-keyboard .row-three b:nth-child(n + 3)::after {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(28, 25, 20, .28),
+    rgba(28, 25, 20, .28) 3px,
+    transparent 3px,
+    transparent 7px
+  );
+}
+
+/* Ações também respeitam o tema correspondente à posição. */
+.letreiro-keyboard .key-backspace {
+  border-color: rgba(138, 127, 108, .8);
+  background: #c2b79f;
+  color: #1c1914;
+}
+
+.letreiro-keyboard .key-enter {
+  border-color: rgba(138, 127, 108, .85);
+  background: #c2b79f;
+  color: #1c1914;
+}
+
+/* Mantém a área real do Liste & Compre e acrescenta apenas a moldura do navegador. */
+.lista-real-preview {
+  aspect-ratio: 1.35;
+}
+
+.lista-real-preview > .lista-browser-bar {
+  position: relative;
+  z-index: 20;
+  height: 38px;
+  flex: 0 0 38px;
+}
+
+.lista-real-preview > .lista-real-scene {
+  height: calc(100% - 38px);
+  min-height: 0;
+}
+
+@media (max-width: 760px) {
+  .lista-real-preview {
+    aspect-ratio: 1.18;
+  }
+}

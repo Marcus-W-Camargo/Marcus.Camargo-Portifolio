@@ -16,7 +16,7 @@ export const projects: Project[] = [
     variant: 'letreiro',
   },
   {
-    title: 'Liste e Compre',
+    title: 'Liste & Compre',
     description:
       'Aplicação completa para planejar listas, acompanhar compras, controlar quantidades e preços e consultar histórico sincronizado por conta, com experiência adaptada para desktop e celular.',
     technologies: ['React', 'TypeScript', 'Supabase', 'Vercel'],
