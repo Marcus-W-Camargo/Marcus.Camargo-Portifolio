@@ -1,0 +1,152 @@
+/*
+ * Ajustes exclusivos do teclado do preview do Letreiro.
+ * Mantém o conteúdo principal no topo e reserva o espaço central para
+ * as tentativas, aproximando o teclado do rodapé da tela emulada.
+ */
+
+.mock-browser-letreiro {
+  display: flex;
+  flex-direction: column;
+}
+
+.mock-browser-letreiro > .letreiro-browser-bar {
+  flex: 0 0 38px;
+}
+
+.letreiro-ui {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 38px);
+  min-height: 0;
+}
+
+.letreiro-keyboard {
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (max-width: 760px) {
+  .mock-browser-letreiro > .letreiro-browser-bar {
+    flex-basis: 32px;
+  }
+
+  .letreiro-ui {
+    height: calc(100% - 32px);
+  }
+
+  /*
+   * O teclado ocupa praticamente toda a largura da tela emulada.
+   * O pequeno avanço sobre o padding lateral evita que as teclas
+   * fiquem comprimidas sem encostar na borda do mock browser.
+   */
+  .letreiro-keyboard {
+    width: calc(100% + 20px);
+    max-width: none;
+    align-self: center;
+    margin-top: auto;
+    margin-right: -10px;
+    margin-left: -10px;
+    padding: 0 2px 2px;
+    box-sizing: border-box;
+  }
+
+  .mini-keyboard-row {
+    display: flex;
+    width: 100%;
+    margin-inline: auto;
+    gap: 4px;
+  }
+
+  .letreiro-keyboard .row-one {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .letreiro-keyboard .row-two {
+    width: 92%;
+    max-width: 92%;
+    padding-inline: 0;
+  }
+
+  .letreiro-keyboard .row-three {
+    width: 85%;
+    max-width: 85%;
+    padding-inline: 0;
+  }
+
+  .letreiro-keyboard .row-enter {
+    width: 72%;
+    max-width: 72%;
+  }
+
+  .letreiro-keyboard b {
+    width: auto;
+    min-width: 24px;
+    max-width: none;
+    height: 32px;
+    flex: 1 1 24px;
+    font-size: 8px;
+  }
+
+  .letreiro-keyboard .key-backspace {
+    width: auto;
+    min-width: 30px;
+    max-width: none;
+    flex: 1.3 1 30px;
+    font-size: 12px;
+  }
+
+  .letreiro-keyboard .key-enter {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: 34px;
+    flex: 1 1 auto;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 390px) {
+  .letreiro-keyboard {
+    width: calc(100% + 18px);
+    margin-right: -9px;
+    margin-left: -9px;
+    padding-inline: 0;
+  }
+
+  .mini-keyboard-row {
+    gap: 3px;
+  }
+
+  .letreiro-keyboard .row-two {
+    width: 93%;
+    max-width: 93%;
+  }
+
+  .letreiro-keyboard .row-three {
+    width: 86%;
+    max-width: 86%;
+  }
+
+  .letreiro-keyboard .row-enter {
+    width: 74%;
+    max-width: 74%;
+  }
+
+  .letreiro-keyboard b {
+    min-width: 22px;
+    height: 30px;
+    flex-basis: 22px;
+    font-size: 7.5px;
+  }
+
+  .letreiro-keyboard .key-backspace {
+    min-width: 28px;
+    flex-basis: 28px;
+  }
+
+  .letreiro-keyboard .key-enter {
+    min-width: 0;
+    height: 32px;
+  }
+}
