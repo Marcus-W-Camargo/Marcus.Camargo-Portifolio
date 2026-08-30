@@ -3,7 +3,7 @@
 }
 
 .project-lista .project-preview {
-  background: linear-gradient(145deg, #f7501b, #f6a56f 58%, #88aad8);
+  background: linear-gradient(145deg, #1a263b 0%, #385b86 48%, #88aad8 76%, #f7501b 100%);
 }
 
 .mock-browser-letreiro,
