@@ -34,28 +34,29 @@
 }
 
 .letreiro-topline {
-  display: grid;
-  grid-template-columns: 34px 1fr 34px;
+  display: flex;
+  justify-content: center;
   align-items: center;
   padding-bottom: 12px;
   border-bottom: 1px solid #27272a;
 }
 
+.letreiro-brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 .letreiro-clapper {
-  justify-self: start;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1;
 }
 
 .letreiro-title {
-  justify-self: center;
   font-size: 13px;
   font-weight: 900;
   letter-spacing: .22em;
-}
-
-.letreiro-topline-spacer {
-  width: 34px;
 }
 
 .letreiro-clue {
@@ -120,26 +121,61 @@
 
 .letreiro-keyboard {
   display: grid;
-  gap: 4px;
+  gap: 6px;
   margin-top: 10px;
 }
 
 .mini-keyboard-row {
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 5px;
 }
 
 .letreiro-keyboard b {
-  width: 24px;
-  height: 26px;
+  width: 28px;
+  height: 30px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(58,58,60,.7);
-  border-radius: 4px;
+  border: 1px solid rgba(58,58,60,.75);
+  border-radius: 5px;
   background: #2b304c;
   color: #f4efe4;
-  font-size: 7px;
+  font-size: 8px;
+  font-weight: 800;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,.32);
+}
+
+.letreiro-keyboard b::before,
+.letreiro-keyboard b::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: 2px;
+  background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.16), rgba(255,255,255,.16) 3px, transparent 3px, transparent 7px);
+}
+
+.letreiro-keyboard b::before { top: 3px; }
+.letreiro-keyboard b::after { bottom: 3px; }
+
+.row-two { padding-inline: 17px; }
+.row-three { padding-inline: 34px; }
+
+.letreiro-keyboard .key-backspace {
+  width: 36px;
+  font-size: 13px;
+  background: #383e5c;
+}
+
+.letreiro-keyboard .key-enter {
+  width: 72%;
+  max-width: 300px;
+  height: 32px;
+  font-size: 10px;
+  letter-spacing: .06em;
+  background: #383e5c;
 }
 
 .mock-browser-lista {
@@ -297,7 +333,20 @@
   }
 
   .letreiro-keyboard b {
-    width: 20px;
-    height: 23px;
+    width: 22px;
+    height: 25px;
+    font-size: 7px;
+  }
+
+  .row-two { padding-inline: 12px; }
+  .row-three { padding-inline: 24px; }
+
+  .letreiro-keyboard .key-backspace {
+    width: 31px;
+  }
+
+  .letreiro-keyboard .key-enter {
+    width: 78%;
+    height: 29px;
   }
 }
