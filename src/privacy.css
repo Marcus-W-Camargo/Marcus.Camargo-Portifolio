@@ -1,6 +1,6 @@
 .footer-privacy-link {
   color: var(--muted);
-  font-size: 12px;
+  font-size: inherit;
   transition: color .2s ease;
 }
 
