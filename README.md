@@ -243,7 +243,7 @@ Principais recursos apresentados no portfólio:
 
 O preview utiliza uma representação inspirada diretamente na tela real de criação de listas, incluindo identidade visual, cards, formulário, itens e controles. No mobile, a composição é reorganizada para refletir melhor o formato vertical utilizado pela aplicação.
 
-🌐 **Abrir projeto:** [liste-e-compre.vercel.app](https://listeecompre.vercel.app/)
+🌐 **Abrir projeto:** [listeecompre.vercel.app](https://listeecompre.vercel.app/)
 
 📦 **Repositório:** [Marcus-W-Camargo/liste-e-compre](https://github.com/Marcus-W-Camargo/liste-e-compre)
 
@@ -585,7 +585,7 @@ Main features represented in the portfolio:
 
 The preview is based directly on the real list-creation interface, including its visual identity, cards, form, items and controls. On mobile, the composition is reorganized to better represent the vertical layout used by the application.
 
-🌐 **Open project:** [liste-e-compre.vercel.app](https://listeecompre.vercel.app/)
+🌐 **Open project:** [listeecompre.vercel.app](https://listeecompre.vercel.app/)
 
 📦 **Repository:** [Marcus-W-Camargo/liste-e-compre](https://github.com/Marcus-W-Camargo/liste-e-compre)
 
