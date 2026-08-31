@@ -311,10 +311,12 @@ function App() {
           <span>Marcus Camargo Portfólio</span>
         </a>
         <p>Desenvolvimento web • Aplicações • Integrações • Automação</p>
-        <p>© {new Date().getFullYear()} Marcus Camargo.</p>
-        <a className="footer-privacy-link" href="/privacidade">
-          Privacidade
-        </a>
+        <p>
+          © {new Date().getFullYear()} Marcus Camargo. ·{' '}
+          <a className="footer-privacy-link" href="/privacidade">
+            Privacidade
+          </a>
+        </p>
       </footer>
     </>
   )
