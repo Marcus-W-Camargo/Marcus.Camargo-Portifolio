@@ -15,10 +15,15 @@ import './preview-harmony-overrides.css'
 import './mobile-project-preview-overrides.css'
 import './letreiro-keyboard-layout-overrides.css'
 import './logo-overrides.css'
+import './privacy.css'
 import App from './App'
+import { PrivacyPage } from './PrivacyPage'
+
+const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
+const Page = pathname === '/privacidade' ? PrivacyPage : App
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <Page />
   </StrictMode>,
 )
