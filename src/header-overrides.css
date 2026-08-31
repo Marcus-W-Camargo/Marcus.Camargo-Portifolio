@@ -11,6 +11,10 @@
   width: 68px;
   height: 68px;
   border-radius: 18px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: auto;
 }
 
 .brand-text {
