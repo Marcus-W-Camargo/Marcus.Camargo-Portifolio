@@ -312,6 +312,9 @@ function App() {
         </a>
         <p>Desenvolvimento web • Aplicações • Integrações • Automação</p>
         <p>© {new Date().getFullYear()} Marcus Camargo.</p>
+        <a className="footer-privacy-link" href="/privacidade">
+          Privacidade
+        </a>
       </footer>
     </>
   )
