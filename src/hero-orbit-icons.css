@@ -58,8 +58,13 @@
   margin: -27px 0 0 -27px;
   pointer-events: none;
   will-change: transform;
-  animation: hero-orbit-line var(--duration) linear infinite;
+  animation-name: hero-orbit-track;
+  animation-duration: var(--duration);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   animation-delay: var(--delay);
+  animation-fill-mode: both;
 }
 
 .hero-orbit-bubble span {
@@ -78,140 +83,161 @@
     0 8px 30px rgba(255,10,120,.16);
   backdrop-filter: blur(8px);
   will-change: opacity, transform, filter;
+  animation-duration: var(--duration);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: var(--delay);
+  animation-fill-mode: both;
 }
 
 .hero-orbit-bubble-back span {
-  animation: hero-behind-depth var(--duration) linear infinite;
-  animation-delay: var(--delay);
+  animation-name: hero-behind-depth;
 }
 
 .hero-orbit-bubble-front span {
-  animation: hero-front-visibility var(--duration) linear infinite;
-  animation-delay: var(--delay);
+  animation-name: hero-front-visibility;
 }
 
-/* Presença: inferior esquerda -> superior direita, cruzando exatamente o centro. */
+/* Cada bolha possui uma pista fixa. A animação usa alternate para percorrer
+   o trajeto inteiro até a outra ponta e retornar pelo mesmo caminho, sem salto. */
+
+/* Presença: canto inferior esquerdo -> canto superior direito, pelo centro. */
 .orbit-bubble-one {
-  --duration: 17.4s;
-  --delay: -1.2s;
-  --start-x: clamp(-154px, -13vw, -124px);
-  --start-y: clamp(118px, 10vw, 136px);
-  --mid-x: 0px;
-  --mid-y: 0px;
-  --end-x: clamp(154px, 13vw, 124px);
-  --end-y: clamp(-118px, -10vw, -136px);
+  --duration: 8.4s;
+  --delay: -1.1s;
+  --start-x: -142px;
+  --start-y: 112px;
+  --end-x: 142px;
+  --end-y: -112px;
 }
 
-/* Organização: superior esquerda -> inferior direita, também pelo centro. */
+/* Organização: canto superior esquerdo -> canto inferior direito, pelo centro. */
 .orbit-bubble-two {
-  --duration: 19.6s;
-  --delay: -5.8s;
-  --start-x: clamp(-152px, -13vw, -122px);
-  --start-y: clamp(-122px, -10vw, -138px);
-  --mid-x: 0px;
-  --mid-y: 0px;
-  --end-x: clamp(152px, 13vw, 122px);
-  --end-y: clamp(122px, 10vw, 138px);
+  --duration: 9.1s;
+  --delay: -3.8s;
+  --start-x: -142px;
+  --start-y: -112px;
+  --end-x: 142px;
+  --end-y: 112px;
 }
 
-/* Agilidade: cruza a logo um pouco acima do centro, da esquerda para a direita. */
+/* Agilidade: esquerda alta -> direita baixa, cruzando pouco acima do centro. */
 .orbit-bubble-three {
-  --duration: 16.2s;
-  --delay: -9.1s;
-  --start-x: clamp(-156px, -13vw, -126px);
-  --start-y: clamp(-70px, -6vw, -52px);
-  --mid-x: 16px;
-  --mid-y: -24px;
-  --end-x: clamp(152px, 13vw, 122px);
-  --end-y: clamp(58px, 5vw, 74px);
+  --duration: 7.8s;
+  --delay: -5.4s;
+  --start-x: -144px;
+  --start-y: -72px;
+  --end-x: 144px;
+  --end-y: 54px;
 }
 
-/* Integrações: caminho contrário, acima à esquerda -> abaixo à direita. */
+/* Integrações: esquerda baixa -> direita alta, cruzando pouco abaixo do centro. */
 .orbit-bubble-four {
-  --duration: 20.8s;
-  --delay: -12.7s;
-  --start-x: clamp(-152px, -13vw, -122px);
-  --start-y: clamp(-54px, -5vw, -38px);
-  --mid-x: -18px;
-  --mid-y: 28px;
-  --end-x: clamp(154px, 13vw, 124px);
-  --end-y: clamp(76px, 6vw, 92px);
+  --duration: 9.6s;
+  --delay: -7.2s;
+  --start-x: -144px;
+  --start-y: 70px;
+  --end-x: 144px;
+  --end-y: -52px;
 }
 
-/* Sistemas: trajetória quase horizontal, ligeiramente inclinada, cruzando o meio inferior. */
+/* Sistemas: diagonal mais rasa, atravessando a faixa central inferior. */
 .orbit-bubble-five {
-  --duration: 18.6s;
-  --delay: -15.4s;
-  --start-x: clamp(-156px, -13vw, -126px);
-  --start-y: 34px;
-  --mid-x: 0px;
-  --mid-y: 48px;
-  --end-x: clamp(156px, 13vw, 126px);
-  --end-y: -22px;
+  --duration: 8.8s;
+  --delay: -8.1s;
+  --start-x: -140px;
+  --start-y: 36px;
+  --end-x: 140px;
+  --end-y: -18px;
 }
 
-@keyframes hero-orbit-line {
+@keyframes hero-orbit-track {
   0% {
-    transform: translate(var(--start-x), var(--start-y)) scale(.96);
+    transform: translate(var(--start-x), var(--start-y)) scale(.98);
   }
   50% {
-    transform: translate(var(--mid-x), var(--mid-y)) scale(.93);
+    transform: translate(
+      calc((var(--start-x) + var(--end-x)) / 2),
+      calc((var(--start-y) + var(--end-y)) / 2)
+    ) scale(.93);
   }
   100% {
     transform: translate(var(--end-x), var(--end-y)) scale(.98);
   }
 }
 
-/* A camada traseira entra em ação só durante a travessia da região da logo,
-   reduzindo opacidade e escala gradualmente para criar profundidade sem corte brusco. */
-@keyframes hero-behind-depth {
-  0%, 23% {
-    opacity: 0;
-    filter: saturate(.9) blur(0);
-    transform: scale(.98);
+/* A troca frente/trás acompanha a posição física no trajeto.
+   Fora da área central, a bolha está integralmente na frente. Ao se aproximar
+   da logo, a camada frontal vai cedendo progressivamente para a traseira. */
+@keyframes hero-front-visibility {
+  0%, 27% {
+    opacity: .98;
+    filter: none;
+    transform: scale(1);
   }
-  31% {
-    opacity: .24;
-    filter: saturate(.84) blur(.06px);
-    transform: scale(.96);
+  34% {
+    opacity: .78;
   }
-  40% {
-    opacity: .46;
-    filter: saturate(.78) blur(.12px);
-    transform: scale(.94);
+  41% {
+    opacity: .42;
+  }
+  47% {
+    opacity: .12;
   }
   50% {
-    opacity: .58;
-    filter: saturate(.74) blur(.16px);
-    transform: scale(.92);
-  }
-  60% {
-    opacity: .46;
-    filter: saturate(.78) blur(.12px);
-    transform: scale(.94);
-  }
-  69% {
-    opacity: .24;
-    filter: saturate(.84) blur(.06px);
-    transform: scale(.96);
-  }
-  77%, 100% {
     opacity: 0;
-    filter: saturate(.9) blur(0);
-    transform: scale(.98);
+  }
+  53% {
+    opacity: .12;
+  }
+  59% {
+    opacity: .42;
+  }
+  66% {
+    opacity: .78;
+  }
+  73%, 100% {
+    opacity: .98;
+    filter: none;
+    transform: scale(1);
   }
 }
 
-/* A cópia frontal permanece visível fora do trecho coberto pela logo e some
-   progressivamente enquanto a cópia traseira assume a travessia. */
-@keyframes hero-front-visibility {
-  0%, 23% { opacity: .98; }
-  31% { opacity: .72; }
-  40% { opacity: .34; }
-  48%, 52% { opacity: 0; }
-  60% { opacity: .34; }
-  69% { opacity: .72; }
-  77%, 100% { opacity: .98; }
+@keyframes hero-behind-depth {
+  0%, 27% {
+    opacity: 0;
+    filter: saturate(.82) blur(.12px);
+    transform: scale(.94);
+  }
+  34% {
+    opacity: .18;
+  }
+  41% {
+    opacity: .36;
+  }
+  47% {
+    opacity: .52;
+  }
+  50% {
+    opacity: .6;
+    filter: saturate(.72) blur(.18px);
+    transform: scale(.91);
+  }
+  53% {
+    opacity: .52;
+  }
+  59% {
+    opacity: .36;
+  }
+  66% {
+    opacity: .18;
+  }
+  73%, 100% {
+    opacity: 0;
+    filter: saturate(.82) blur(.12px);
+    transform: scale(.94);
+  }
 }
 
 @media (max-width: 1180px) {
@@ -246,6 +272,21 @@
   .hero-orbit-bubble {
     margin: -23px 0 0 -23px;
   }
+
+  .orbit-bubble-one,
+  .orbit-bubble-two,
+  .orbit-bubble-three,
+  .orbit-bubble-four,
+  .orbit-bubble-five {
+    --start-x: calc(var(--mobile-start-x, -116px));
+    --end-x: calc(var(--mobile-end-x, 116px));
+  }
+
+  .orbit-bubble-one { --mobile-start-x: -116px; --mobile-end-x: 116px; --start-y: 92px; --end-y: -92px; }
+  .orbit-bubble-two { --mobile-start-x: -116px; --mobile-end-x: 116px; --start-y: -92px; --end-y: 92px; }
+  .orbit-bubble-three { --mobile-start-x: -118px; --mobile-end-x: 118px; --start-y: -58px; --end-y: 44px; }
+  .orbit-bubble-four { --mobile-start-x: -118px; --mobile-end-x: 118px; --start-y: 56px; --end-y: -42px; }
+  .orbit-bubble-five { --mobile-start-x: -116px; --mobile-end-x: 116px; --start-y: 30px; --end-y: -14px; }
 }
 
 @media (max-width: 640px) {
@@ -276,6 +317,12 @@
     width: 17px;
     height: 17px;
   }
+
+  .orbit-bubble-one { --start-x: -94px; --end-x: 94px; --start-y: 74px; --end-y: -74px; }
+  .orbit-bubble-two { --start-x: -94px; --end-x: 94px; --start-y: -74px; --end-y: 74px; }
+  .orbit-bubble-three { --start-x: -96px; --end-x: 96px; --start-y: -46px; --end-y: 36px; }
+  .orbit-bubble-four { --start-x: -96px; --end-x: 96px; --start-y: 44px; --end-y: -34px; }
+  .orbit-bubble-five { --start-x: -94px; --end-x: 94px; --start-y: 24px; --end-y: -10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
