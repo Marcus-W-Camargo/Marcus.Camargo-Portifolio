@@ -68,14 +68,6 @@
   backdrop-filter: blur(8px);
 }
 
-/*
-  Cada ícone existe em duas cópias sincronizadas. A metade traseira cruza a
-  área da logo com z-index menor e transparência reduzida; no ponto externo
-  oposto, a cópia frontal assume o mesmo movimento e volta atravessando a
-  logo com nitidez total. A troca ocorre fora do card, evitando cortes no
-  meio da imagem e criando uma órbita completa: atrás em uma passagem e na
-  frente na passagem de retorno.
-*/
 .hero-orbit-bubble-back {
   z-index: 1;
   animation-name: hero-orbit-loop, hero-depth-back;
@@ -100,82 +92,112 @@
   opacity: .98;
 }
 
-/* Presença: diagonal superior esquerda -> inferior direita -> retorno diagonal oposta */
+/* Presença */
 .orbit-bubble-one {
   --a-x: clamp(-236px, -19vw, -158px);
   --a-y: clamp(-222px, -18vw, -148px);
+  --back-entry-x: clamp(-126px, -10vw, -82px);
+  --back-entry-y: clamp(-132px, -10vw, -84px);
   --back-x: -18px;
   --back-y: 16px;
+  --back-exit-x: clamp(112px, 9vw, 142px);
+  --back-exit-y: clamp(92px, 8vw, 126px);
   --b-x: clamp(222px, 18vw, 238px);
   --b-y: clamp(170px, 15vw, 214px);
-  --front-x: 34px;
-  --front-y: -42px;
   --edge-x: clamp(178px, 15vw, 214px);
   --edge-y: clamp(-202px, -16vw, -162px);
+  --front-x: 34px;
+  --front-y: -42px;
+  --front-exit-x: clamp(-112px, -9vw, -78px);
+  --front-exit-y: clamp(-126px, -10vw, -82px);
   animation-duration: 17.4s, 17.4s;
   animation-delay: -1.1s, -1.1s;
 }
 
-/* Organização: superior direita -> inferior esquerda -> retorno mais central */
+/* Organização */
 .orbit-bubble-two {
   --a-x: clamp(166px, 17vw, 226px);
   --a-y: clamp(-228px, -18vw, -158px);
+  --back-entry-x: clamp(102px, 9vw, 132px);
+  --back-entry-y: clamp(-122px, -10vw, -82px);
   --back-x: 22px;
   --back-y: -8px;
+  --back-exit-x: clamp(-118px, -10vw, -86px);
+  --back-exit-y: clamp(78px, 7vw, 108px);
   --b-x: clamp(-236px, -19vw, -166px);
   --b-y: clamp(150px, 14vw, 202px);
-  --front-x: -38px;
-  --front-y: 34px;
   --edge-x: clamp(-212px, -16vw, -174px);
   --edge-y: clamp(-198px, -15vw, -152px);
+  --front-x: -38px;
+  --front-y: 34px;
+  --front-exit-x: clamp(92px, 8vw, 124px);
+  --front-exit-y: clamp(-114px, -9vw, -76px);
   animation-duration: 20.2s, 20.2s;
   animation-delay: -6.7s, -6.7s;
 }
 
-/* Agilidade: esquerda baixa -> direita alta -> retorno cruzando o miolo */
+/* Agilidade */
 .orbit-bubble-three {
   --a-x: clamp(-242px, -20vw, -170px);
   --a-y: clamp(92px, 10vw, 142px);
+  --back-entry-x: clamp(-132px, -11vw, -92px);
+  --back-entry-y: clamp(54px, 5vw, 76px);
   --back-x: -24px;
   --back-y: -28px;
+  --back-exit-x: clamp(106px, 9vw, 138px);
+  --back-exit-y: clamp(-92px, -8vw, -62px);
   --b-x: clamp(218px, 18vw, 238px);
   --b-y: clamp(-162px, -14vw, -118px);
-  --front-x: 26px;
-  --front-y: 38px;
   --edge-x: clamp(196px, 16vw, 224px);
   --edge-y: clamp(152px, 13vw, 194px);
+  --front-x: 26px;
+  --front-y: 38px;
+  --front-exit-x: clamp(-122px, -10vw, -84px);
+  --front-exit-y: clamp(72px, 6vw, 96px);
   animation-duration: 15.8s, 15.8s;
   animation-delay: -9.8s, -9.8s;
 }
 
-/* Integrações: direita baixa -> esquerda alta -> retorno por baixo */
+/* Integrações */
 .orbit-bubble-four {
   --a-x: clamp(184px, 17vw, 232px);
   --a-y: clamp(168px, 15vw, 214px);
+  --back-entry-x: clamp(102px, 9vw, 134px);
+  --back-entry-y: clamp(94px, 8vw, 124px);
   --back-x: 14px;
   --back-y: 30px;
+  --back-exit-x: clamp(-108px, -9vw, -78px);
+  --back-exit-y: clamp(-106px, -9vw, -72px);
   --b-x: clamp(-224px, -18vw, -162px);
   --b-y: clamp(-204px, -16vw, -146px);
-  --front-x: -30px;
-  --front-y: -26px;
   --edge-x: clamp(-184px, -15vw, -152px);
   --edge-y: clamp(178px, 15vw, 214px);
+  --front-x: -30px;
+  --front-y: -26px;
+  --front-exit-x: clamp(104px, 9vw, 136px);
+  --front-exit-y: clamp(96px, 8vw, 126px);
   animation-duration: 22.6s, 22.6s;
   animation-delay: -13.9s, -13.9s;
 }
 
-/* Sistemas: topo quase central -> base esquerda -> retorno pela lateral direita */
+/* Sistemas */
 .orbit-bubble-five {
   --a-x: clamp(-74px, -6vw, -46px);
   --a-y: clamp(-244px, -20vw, -170px);
+  --back-entry-x: clamp(-24px, -2vw, -14px);
+  --back-entry-y: clamp(-132px, -11vw, -92px);
   --back-x: 34px;
   --back-y: 8px;
+  --back-exit-x: clamp(-88px, -7vw, -62px);
+  --back-exit-y: clamp(112px, 9vw, 142px);
   --b-x: clamp(-188px, -16vw, -148px);
   --b-y: clamp(188px, 16vw, 226px);
-  --front-x: -18px;
-  --front-y: -36px;
   --edge-x: clamp(212px, 18vw, 240px);
   --edge-y: 28px;
+  --front-x: -18px;
+  --front-y: -36px;
+  --front-exit-x: clamp(-52px, -4vw, -34px);
+  --front-exit-y: clamp(-132px, -11vw, -94px);
   animation-duration: 18.7s, 18.7s;
   animation-delay: -16.2s, -16.2s;
 }
@@ -185,13 +207,13 @@
     transform: translate(var(--a-x), var(--a-y)) scale(.91) rotate(-6deg);
   }
   12% {
-    transform: translate(calc((var(--a-x) + var(--back-x)) / 2), calc((var(--a-y) + var(--back-y)) / 2)) scale(.88) rotate(2deg);
+    transform: translate(var(--back-entry-x), var(--back-entry-y)) scale(.88) rotate(2deg);
   }
   25% {
     transform: translate(var(--back-x), var(--back-y)) scale(.84) rotate(-3deg);
   }
   38% {
-    transform: translate(calc((var(--b-x) + var(--back-x)) / 2), calc((var(--b-y) + var(--back-y)) / 2)) scale(.88) rotate(4deg);
+    transform: translate(var(--back-exit-x), var(--back-exit-y)) scale(.88) rotate(4deg);
   }
   50% {
     transform: translate(var(--b-x), var(--b-y)) scale(.92) rotate(-4deg);
@@ -203,7 +225,7 @@
     transform: translate(var(--front-x), var(--front-y)) scale(1.04) rotate(-2deg);
   }
   88% {
-    transform: translate(calc((var(--a-x) + var(--front-x)) / 2), calc((var(--a-y) + var(--front-y)) / 2)) scale(1) rotate(4deg);
+    transform: translate(var(--front-exit-x), var(--front-exit-y)) scale(1) rotate(4deg);
   }
   100% {
     transform: translate(var(--a-x), var(--a-y)) scale(.93) rotate(-6deg);
@@ -212,15 +234,15 @@
 
 @keyframes hero-depth-back {
   0%, 44% { opacity: .52; }
-  47% { opacity: .36; }
-  49.5% { opacity: .08; }
+  47% { opacity: .34; }
+  49.5% { opacity: .07; }
   50%, 100% { opacity: 0; }
 }
 
 @keyframes hero-depth-front {
   0%, 49.5% { opacity: 0; }
   50.5% { opacity: .08; }
-  53% { opacity: .68; }
+  53% { opacity: .7; }
   56%, 100% { opacity: .98; }
 }
 
@@ -247,23 +269,6 @@
 
   .hero-orbit-bubble {
     margin: -23px 0 0 -23px;
-  }
-
-  .orbit-bubble-one,
-  .orbit-bubble-two,
-  .orbit-bubble-three,
-  .orbit-bubble-four,
-  .orbit-bubble-five {
-    --a-x: calc(var(--a-x) * .78);
-    --a-y: calc(var(--a-y) * .78);
-    --b-x: calc(var(--b-x) * .78);
-    --b-y: calc(var(--b-y) * .78);
-    --edge-x: calc(var(--edge-x) * .78);
-    --edge-y: calc(var(--edge-y) * .78);
-    --back-x: calc(var(--back-x) * .82);
-    --back-y: calc(var(--back-y) * .82);
-    --front-x: calc(var(--front-x) * .82);
-    --front-y: calc(var(--front-y) * .82);
   }
 }
 
@@ -294,19 +299,6 @@
   .hero-orbit-bubble svg {
     width: 17px;
     height: 17px;
-  }
-
-  .orbit-bubble-one,
-  .orbit-bubble-two,
-  .orbit-bubble-three,
-  .orbit-bubble-four,
-  .orbit-bubble-five {
-    --a-x: calc(var(--a-x) * .72);
-    --a-y: calc(var(--a-y) * .72);
-    --b-x: calc(var(--b-x) * .72);
-    --b-y: calc(var(--b-y) * .72);
-    --edge-x: calc(var(--edge-x) * .72);
-    --edge-y: calc(var(--edge-y) * .72);
   }
 }
 
