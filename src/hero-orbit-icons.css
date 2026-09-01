@@ -35,10 +35,11 @@
   pointer-events: none;
 }
 
-/* O retorno de cada órbita é invisível. A bolha chega ao ponto B fora da imagem,
-   desaparece ali e refaz B -> A oculta, simulando a passagem por trás da logo. */
+/* As duas cópias percorrem exatamente a mesma pista. Na ida, apenas a camada
+   frontal aparece. Na volta, apenas a cópia traseira permanece visível com
+   opacidade reduzida, ficando fisicamente atrás da logo. */
 .hero-orbit-layer-back {
-  display: none;
+  z-index: 1;
 }
 
 .hero-orbit-layer-front {
@@ -85,72 +86,79 @@
     inset 0 0 18px rgba(255,255,255,.06),
     0 8px 30px rgba(255,10,120,.16);
   backdrop-filter: blur(8px);
-  will-change: opacity;
-}
-
-.hero-orbit-bubble-front span {
-  animation: hero-orbit-cycle-visibility var(--duration) linear infinite;
+  will-change: opacity, filter, transform;
+  animation-duration: var(--duration);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
   animation-delay: var(--delay);
   animation-fill-mode: both;
 }
 
-/* Cada ícone tem uma pista reta e fixa. Os extremos foram ampliados para que a
-   bolha ultrapasse levemente a borda visual da logo antes de trocar de fase. */
+.hero-orbit-bubble-front span {
+  animation-name: hero-orbit-front-cycle;
+}
+
+.hero-orbit-bubble-back span {
+  animation-name: hero-orbit-back-cycle;
+}
+
+/* Cada ícone conserva sua pista reta fixa. Os extremos foram novamente ampliados
+   para que a bolha saia perceptivelmente da área visual da logo antes de inverter. */
 
 /* Presença: inferior esquerda -> superior direita, exatamente pelo centro. */
 .orbit-bubble-one {
-  --duration: 11.2s;
+  --duration: 13.6s;
   --delay: -1.1s;
-  --start-x: -180px;
-  --start-y: 142px;
-  --end-x: 180px;
-  --end-y: -142px;
+  --start-x: -208px;
+  --start-y: 164px;
+  --end-x: 208px;
+  --end-y: -164px;
 }
 
 /* Organização: superior esquerda -> inferior direita, exatamente pelo centro. */
 .orbit-bubble-two {
-  --duration: 12s;
+  --duration: 14.4s;
   --delay: -3.8s;
-  --start-x: -180px;
-  --start-y: -142px;
-  --end-x: 180px;
-  --end-y: 142px;
+  --start-x: -208px;
+  --start-y: -164px;
+  --end-x: 208px;
+  --end-y: 164px;
 }
 
 /* Agilidade: esquerda alta -> direita baixa, cruzando pouco acima do centro. */
 .orbit-bubble-three {
-  --duration: 10.4s;
+  --duration: 12.8s;
   --delay: -5.4s;
-  --start-x: -182px;
-  --start-y: -78px;
-  --end-x: 182px;
-  --end-y: 62px;
+  --start-x: -210px;
+  --start-y: -90px;
+  --end-x: 210px;
+  --end-y: 72px;
 }
 
 /* Integrações: esquerda baixa -> direita alta, cruzando pouco abaixo do centro. */
 .orbit-bubble-four {
-  --duration: 12.6s;
+  --duration: 15s;
   --delay: -7.2s;
-  --start-x: -182px;
-  --start-y: 72px;
-  --end-x: 182px;
-  --end-y: -58px;
+  --start-x: -210px;
+  --start-y: 84px;
+  --end-x: 210px;
+  --end-y: -68px;
 }
 
 /* Sistemas: diagonal rasa, atravessando a faixa central inferior. */
 .orbit-bubble-five {
-  --duration: 11.6s;
+  --duration: 13.9s;
   --delay: -8.1s;
-  --start-x: -178px;
-  --start-y: 38px;
-  --end-x: 178px;
-  --end-y: -28px;
+  --start-x: -204px;
+  --start-y: 46px;
+  --end-x: 204px;
+  --end-y: -34px;
 }
 
 /* Um ciclo completo contém as duas pernas da órbita:
-   0 -> 50%  = A para B (visível)
-   50 -> 100% = B para A (oculta)
-   Assim não existe salto nem reinício no limite. */
+   0 -> 50%   = A para B
+   50 -> 100% = B para A
+   O movimento não reinicia nem teleporta nos extremos. */
 @keyframes hero-orbit-track {
   0% {
     transform: translate(var(--start-x), var(--start-y));
@@ -163,21 +171,53 @@
   }
 }
 
-/* A troca de visibilidade acontece somente nos extremos, já fora da área principal
-   da logo. Durante A -> B a bolha permanece totalmente visível; durante B -> A,
-   permanece oculta do começo ao fim. */
-@keyframes hero-orbit-cycle-visibility {
-  0%, 49.4% {
+/* Ida A -> B: cópia frontal em opacidade normal. A troca acontece somente
+   junto ao extremo B, quando a bolha já saiu da área principal da logo. */
+@keyframes hero-orbit-front-cycle {
+  0%, 48.8% {
     opacity: .98;
+    filter: none;
+    transform: scale(1);
   }
-  50% {
-    opacity: .98;
+  49.6% {
+    opacity: .72;
   }
-  50.8%, 98.8% {
+  50.2%, 99.2% {
     opacity: 0;
   }
-  99.5%, 100% {
+  99.7% {
+    opacity: .72;
+  }
+  100% {
     opacity: .98;
+    filter: none;
+    transform: scale(1);
+  }
+}
+
+/* Volta B -> A: a bolha continua visível, porém mais transparente e na camada
+   traseira. Isso cria o efeito de retorno por trás da logo sem fazê-la desaparecer. */
+@keyframes hero-orbit-back-cycle {
+  0%, 48.8% {
+    opacity: 0;
+    filter: saturate(.82) blur(.08px);
+    transform: scale(.96);
+  }
+  49.6% {
+    opacity: .16;
+  }
+  50.2%, 98.8% {
+    opacity: .3;
+    filter: saturate(.78) blur(.12px);
+    transform: scale(.95);
+  }
+  99.5% {
+    opacity: .16;
+  }
+  100% {
+    opacity: 0;
+    filter: saturate(.82) blur(.08px);
+    transform: scale(.96);
   }
 }
 
@@ -214,11 +254,11 @@
     margin: -23px 0 0 -23px;
   }
 
-  .orbit-bubble-one { --start-x: -138px; --end-x: 138px; --start-y: 108px; --end-y: -108px; }
-  .orbit-bubble-two { --start-x: -138px; --end-x: 138px; --start-y: -108px; --end-y: 108px; }
-  .orbit-bubble-three { --start-x: -140px; --end-x: 140px; --start-y: -64px; --end-y: 50px; }
-  .orbit-bubble-four { --start-x: -140px; --end-x: 140px; --start-y: 60px; --end-y: -48px; }
-  .orbit-bubble-five { --start-x: -136px; --end-x: 136px; --start-y: 32px; --end-y: -22px; }
+  .orbit-bubble-one { --start-x: -158px; --end-x: 158px; --start-y: 124px; --end-y: -124px; }
+  .orbit-bubble-two { --start-x: -158px; --end-x: 158px; --start-y: -124px; --end-y: 124px; }
+  .orbit-bubble-three { --start-x: -160px; --end-x: 160px; --start-y: -72px; --end-y: 58px; }
+  .orbit-bubble-four { --start-x: -160px; --end-x: 160px; --start-y: 68px; --end-y: -54px; }
+  .orbit-bubble-five { --start-x: -156px; --end-x: 156px; --start-y: 38px; --end-y: -26px; }
 }
 
 @media (max-width: 640px) {
@@ -250,11 +290,11 @@
     height: 17px;
   }
 
-  .orbit-bubble-one { --start-x: -112px; --end-x: 112px; --start-y: 88px; --end-y: -88px; }
-  .orbit-bubble-two { --start-x: -112px; --end-x: 112px; --start-y: -88px; --end-y: 88px; }
-  .orbit-bubble-three { --start-x: -114px; --end-x: 114px; --start-y: -50px; --end-y: 40px; }
-  .orbit-bubble-four { --start-x: -114px; --end-x: 114px; --start-y: 48px; --end-y: -38px; }
-  .orbit-bubble-five { --start-x: -110px; --end-x: 110px; --start-y: 26px; --end-y: -18px; }
+  .orbit-bubble-one { --start-x: -128px; --end-x: 128px; --start-y: 100px; --end-y: -100px; }
+  .orbit-bubble-two { --start-x: -128px; --end-x: 128px; --start-y: -100px; --end-y: 100px; }
+  .orbit-bubble-three { --start-x: -130px; --end-x: 130px; --start-y: -58px; --end-y: 46px; }
+  .orbit-bubble-four { --start-x: -130px; --end-x: 130px; --start-y: 54px; --end-y: -44px; }
+  .orbit-bubble-five { --start-x: -126px; --end-x: 126px; --start-y: 30px; --end-y: -22px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
