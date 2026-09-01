@@ -58,7 +58,7 @@
   margin: -27px 0 0 -27px;
   pointer-events: none;
   will-change: transform;
-  animation: hero-orbit-random var(--duration) cubic-bezier(.45,.03,.55,.97) infinite;
+  animation: hero-orbit-line var(--duration) linear infinite;
   animation-delay: var(--delay);
 }
 
@@ -90,115 +90,128 @@
   animation-delay: var(--delay);
 }
 
-/* Presença: diagonal superior esquerda -> inferior direita, retorno aberto por cima. */
+/* Presença: inferior esquerda -> superior direita, cruzando exatamente o centro. */
 .orbit-bubble-one {
-  --duration: 18.2s;
-  --delay: -1.4s;
-  --p0x: clamp(-238px, -20vw, -176px); --p0y: clamp(-232px, -19vw, -168px);
-  --p1x: clamp(-206px, -17vw, -154px); --p1y: clamp(-192px, -16vw, -142px);
-  --p2x: clamp(-166px, -13vw, -132px); --p2y: clamp(-158px, -12vw, -122px);
-  --p3x: -18px; --p3y: 12px;
-  --p4x: clamp(164px, 13vw, 188px); --p4y: clamp(158px, 12vw, 182px);
-  --p5x: clamp(238px, 20vw, 262px); --p5y: clamp(222px, 18vw, 246px);
-  --p6x: clamp(188px, 15vw, 218px); --p6y: clamp(-198px, -16vw, -162px);
-  --p7x: 38px; --p7y: -52px;
-  --p8x: clamp(-172px, -14vw, -142px); --p8y: clamp(-146px, -12vw, -116px);
+  --duration: 17.4s;
+  --delay: -1.2s;
+  --start-x: clamp(-154px, -13vw, -124px);
+  --start-y: clamp(118px, 10vw, 136px);
+  --mid-x: 0px;
+  --mid-y: 0px;
+  --end-x: clamp(154px, 13vw, 124px);
+  --end-y: clamp(-118px, -10vw, -136px);
 }
 
-/* Organização: diagonal superior direita -> inferior esquerda, volta em curva baixa. */
+/* Organização: superior esquerda -> inferior direita, também pelo centro. */
 .orbit-bubble-two {
-  --duration: 21.1s;
-  --delay: -7.2s;
-  --p0x: clamp(232px, 19vw, 258px); --p0y: clamp(-220px, -18vw, -164px);
-  --p1x: clamp(202px, 16vw, 226px); --p1y: clamp(-184px, -15vw, -142px);
-  --p2x: clamp(164px, 13vw, 188px); --p2y: clamp(-150px, -12vw, -116px);
-  --p3x: 24px; --p3y: -10px;
-  --p4x: clamp(-166px, -13vw, -138px); --p4y: clamp(150px, 12vw, 178px);
-  --p5x: clamp(-236px, -19vw, -208px); --p5y: clamp(220px, 18vw, 244px);
-  --p6x: clamp(-204px, -16vw, -174px); --p6y: clamp(64px, 6vw, 96px);
-  --p7x: -42px; --p7y: 34px;
-  --p8x: clamp(178px, 14vw, 208px); --p8y: clamp(-82px, -7vw, -56px);
+  --duration: 19.6s;
+  --delay: -5.8s;
+  --start-x: clamp(-152px, -13vw, -122px);
+  --start-y: clamp(-122px, -10vw, -138px);
+  --mid-x: 0px;
+  --mid-y: 0px;
+  --end-x: clamp(152px, 13vw, 122px);
+  --end-y: clamp(122px, 10vw, 138px);
 }
 
-/* Agilidade: cruza quase pelo centro na horizontal e retorna pela diagonal superior. */
+/* Agilidade: cruza a logo um pouco acima do centro, da esquerda para a direita. */
 .orbit-bubble-three {
-  --duration: 16.4s;
-  --delay: -10.6s;
-  --p0x: clamp(-252px, -21vw, -212px); --p0y: 46px;
-  --p1x: clamp(-210px, -17vw, -176px); --p1y: 34px;
-  --p2x: clamp(-166px, -13vw, -138px); --p2y: 22px;
-  --p3x: -12px; --p3y: -24px;
-  --p4x: clamp(168px, 13vw, 194px); --p4y: clamp(-90px, -7vw, -62px);
-  --p5x: clamp(242px, 20vw, 266px); --p5y: clamp(-132px, -11vw, -102px);
-  --p6x: clamp(154px, 12vw, 184px); --p6y: clamp(-210px, -17vw, -172px);
-  --p7x: 24px; --p7y: 44px;
-  --p8x: clamp(-174px, -14vw, -144px); --p8y: clamp(116px, 10vw, 148px);
+  --duration: 16.2s;
+  --delay: -9.1s;
+  --start-x: clamp(-156px, -13vw, -126px);
+  --start-y: clamp(-70px, -6vw, -52px);
+  --mid-x: 16px;
+  --mid-y: -24px;
+  --end-x: clamp(152px, 13vw, 122px);
+  --end-y: clamp(58px, 5vw, 74px);
 }
 
-/* Integrações: sobe da direita inferior, atravessa para a esquerda e retorna pela base. */
+/* Integrações: caminho contrário, acima à esquerda -> abaixo à direita. */
 .orbit-bubble-four {
-  --duration: 23.3s;
-  --delay: -14.5s;
-  --p0x: clamp(224px, 18vw, 252px); --p0y: clamp(222px, 18vw, 248px);
-  --p1x: clamp(198px, 16vw, 224px); --p1y: clamp(186px, 15vw, 214px);
-  --p2x: clamp(162px, 13vw, 188px); --p2y: clamp(150px, 12vw, 178px);
-  --p3x: 12px; --p3y: 30px;
-  --p4x: clamp(-166px, -13vw, -138px); --p4y: clamp(-154px, -12vw, -122px);
-  --p5x: clamp(-230px, -19vw, -204px); --p5y: clamp(-220px, -18vw, -178px);
-  --p6x: clamp(-208px, -17vw, -178px); --p6y: clamp(154px, 13vw, 186px);
-  --p7x: -34px; --p7y: -28px;
-  --p8x: clamp(174px, 14vw, 204px); --p8y: clamp(126px, 10vw, 154px);
+  --duration: 20.8s;
+  --delay: -12.7s;
+  --start-x: clamp(-152px, -13vw, -122px);
+  --start-y: clamp(-54px, -5vw, -38px);
+  --mid-x: -18px;
+  --mid-y: 28px;
+  --end-x: clamp(154px, 13vw, 124px);
+  --end-y: clamp(76px, 6vw, 92px);
 }
 
-/* Sistemas: vem do topo, mergulha pelo centro e sai lateralmente. */
+/* Sistemas: trajetória quase horizontal, ligeiramente inclinada, cruzando o meio inferior. */
 .orbit-bubble-five {
-  --duration: 19.5s;
-  --delay: -17.1s;
-  --p0x: -64px; --p0y: clamp(-258px, -21vw, -212px);
-  --p1x: -42px; --p1y: clamp(-214px, -17vw, -176px);
-  --p2x: -20px; --p2y: clamp(-172px, -14vw, -140px);
-  --p3x: 32px; --p3y: 8px;
-  --p4x: clamp(-108px, -9vw, -78px); --p4y: clamp(166px, 13vw, 194px);
-  --p5x: clamp(-180px, -15vw, -150px); --p5y: clamp(232px, 19vw, 258px);
-  --p6x: clamp(220px, 18vw, 248px); --p6y: 34px;
-  --p7x: -16px; --p7y: -38px;
-  --p8x: clamp(-84px, -7vw, -58px); --p8y: clamp(-178px, -14vw, -146px);
+  --duration: 18.6s;
+  --delay: -15.4s;
+  --start-x: clamp(-156px, -13vw, -126px);
+  --start-y: 34px;
+  --mid-x: 0px;
+  --mid-y: 48px;
+  --end-x: clamp(156px, 13vw, 126px);
+  --end-y: -22px;
 }
 
-@keyframes hero-orbit-random {
-  0% { transform: translate(var(--p0x), var(--p0y)) scale(.96) rotate(-5deg); }
-  10% { transform: translate(var(--p1x), var(--p1y)) scale(.94) rotate(2deg); }
-  22% { transform: translate(var(--p2x), var(--p2y)) scale(.91) rotate(-2deg); }
-  34% { transform: translate(var(--p3x), var(--p3y)) scale(.87) rotate(3deg); }
-  45% { transform: translate(var(--p4x), var(--p4y)) scale(.92) rotate(-3deg); }
-  50% { transform: translate(var(--p5x), var(--p5y)) scale(.97) rotate(2deg); }
-  62% { transform: translate(var(--p6x), var(--p6y)) scale(1) rotate(-2deg); }
-  75% { transform: translate(var(--p7x), var(--p7y)) scale(1.04) rotate(3deg); }
-  88% { transform: translate(var(--p8x), var(--p8y)) scale(1.01) rotate(-2deg); }
-  100% { transform: translate(var(--p0x), var(--p0y)) scale(.96) rotate(-5deg); }
+@keyframes hero-orbit-line {
+  0% {
+    transform: translate(var(--start-x), var(--start-y)) scale(.96);
+  }
+  50% {
+    transform: translate(var(--mid-x), var(--mid-y)) scale(.93);
+  }
+  100% {
+    transform: translate(var(--end-x), var(--end-y)) scale(.98);
+  }
 }
 
-/* A cópia traseira fica fisicamente abaixo da logo. A própria transparência do PNG
-   faz a bolha aparecer pelas áreas transparentes e ser ocultada pelas áreas opacas.
-   A opacidade varia aos poucos apenas para reforçar a sensação de profundidade. */
+/* A camada traseira entra em ação só durante a travessia da região da logo,
+   reduzindo opacidade e escala gradualmente para criar profundidade sem corte brusco. */
 @keyframes hero-behind-depth {
-  0%, 8% { opacity: .9; filter: saturate(.9) blur(0); transform: scale(1); }
-  18% { opacity: .76; filter: saturate(.84) blur(.08px); transform: scale(.98); }
-  30% { opacity: .58; filter: saturate(.76) blur(.16px); transform: scale(.95); }
-  38% { opacity: .5; filter: saturate(.72) blur(.2px); transform: scale(.94); }
-  46% { opacity: .72; filter: saturate(.82) blur(.1px); transform: scale(.98); }
-  50%, 100% { opacity: .9; filter: saturate(.9) blur(0); transform: scale(1); }
+  0%, 23% {
+    opacity: 0;
+    filter: saturate(.9) blur(0);
+    transform: scale(.98);
+  }
+  31% {
+    opacity: .24;
+    filter: saturate(.84) blur(.06px);
+    transform: scale(.96);
+  }
+  40% {
+    opacity: .46;
+    filter: saturate(.78) blur(.12px);
+    transform: scale(.94);
+  }
+  50% {
+    opacity: .58;
+    filter: saturate(.74) blur(.16px);
+    transform: scale(.92);
+  }
+  60% {
+    opacity: .46;
+    filter: saturate(.78) blur(.12px);
+    transform: scale(.94);
+  }
+  69% {
+    opacity: .24;
+    filter: saturate(.84) blur(.06px);
+    transform: scale(.96);
+  }
+  77%, 100% {
+    opacity: 0;
+    filter: saturate(.9) blur(0);
+    transform: scale(.98);
+  }
 }
 
-/* A camada frontal só troca de estado quando a bolha já está fora do card.
-   Assim, durante a travessia traseira não existe corte de opacidade no meio da logo. */
+/* A cópia frontal permanece visível fora do trecho coberto pela logo e some
+   progressivamente enquanto a cópia traseira assume a travessia. */
 @keyframes hero-front-visibility {
-  0%, 47% { opacity: 0; }
-  49% { opacity: 0; }
-  50.5% { opacity: .98; }
-  96% { opacity: .98; }
-  98% { opacity: 0; }
-  100% { opacity: 0; }
+  0%, 23% { opacity: .98; }
+  31% { opacity: .72; }
+  40% { opacity: .34; }
+  48%, 52% { opacity: 0; }
+  60% { opacity: .34; }
+  69% { opacity: .72; }
+  77%, 100% { opacity: .98; }
 }
 
 @media (max-width: 1180px) {
@@ -271,5 +284,3 @@
     animation-play-state: paused;
   }
 }
-
-/* Preview pipeline validation: Cloudflare non-production branch build. */
