@@ -100,8 +100,10 @@ export function RecruiterPage() {
                   <h2>{title}</h2>
                 </div>
                 <div className="recruiter-principle-detail">
-                  <Icon size={20} />
-                  <h2>{title}</h2>
+                  <div className="recruiter-principle-detail-heading">
+                    <Icon size={22} strokeWidth={1.8} />
+                    <h2>{title}</h2>
+                  </div>
                   <p>{text}</p>
                 </div>
               </button>
