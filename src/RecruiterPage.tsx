@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { ArrowLeft, ArrowUpRight, Github, ShieldCheck, Wrench } from 'lucide-react'
 import logo from './assets/Marcus-Camargo-Logo-Transparente.png'
 
@@ -38,7 +39,27 @@ const cases = [
   },
 ]
 
+const principles = [
+  {
+    icon: Wrench,
+    title: 'Como trabalho',
+    text: 'Começo pelo problema, construo uma primeira solução funcional e uso os limites encontrados para orientar as próximas decisões técnicas.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'O que passei a priorizar',
+    text: 'Segurança, isolamento de dados, deploy previsível, responsividade e documentação deixaram de ser “acabamento” e passaram a fazer parte da definição de pronto.',
+  },
+  {
+    icon: Github,
+    title: 'O que quero demonstrar',
+    text: 'Capacidade de investigar, corrigir, iterar e explicar decisões — inclusive quando a primeira abordagem não é a melhor.',
+  },
+]
+
 export function RecruiterPage() {
+  const [activePrinciple, setActivePrinciple] = useState<number | null>(null)
+
   return (
     <div className="recruiter-page">
       <header className="recruiter-header">
@@ -50,7 +71,7 @@ export function RecruiterPage() {
       </header>
 
       <main className="recruiter-main">
-        <section className="recruiter-hero">
+        <section className="recruiter-hero recruiter-animate">
           <div>
             <span className="section-kicker">Engenharia em evolução</span>
             <h1>Mais do que listar tecnologias, quero mostrar como eu penso quando um projeto começa a ficar difícil.</h1>
@@ -63,13 +84,33 @@ export function RecruiterPage() {
           </div>
         </section>
 
-        <section className="recruiter-principles">
-          <article><Wrench size={21} /><h2>Como trabalho</h2><p>Começo pelo problema, construo uma primeira solução funcional e uso os limites encontrados para orientar as próximas decisões técnicas.</p></article>
-          <article><ShieldCheck size={21} /><h2>O que passei a priorizar</h2><p>Segurança, isolamento de dados, deploy previsível, responsividade e documentação deixaram de ser “acabamento” e passaram a fazer parte da definição de pronto.</p></article>
-          <article><Github size={21} /><h2>O que quero demonstrar</h2><p>Capacidade de investigar, corrigir, iterar e explicar decisões — inclusive quando a primeira abordagem não é a melhor.</p></article>
+        <section className="recruiter-principles recruiter-animate" aria-label="Princípios de trabalho">
+          {principles.map(({ icon: Icon, title, text }, index) => {
+            const active = activePrinciple === index
+            return (
+              <button
+                type="button"
+                key={title}
+                className={`recruiter-principle-card ${active ? 'active' : ''}`}
+                onClick={() => setActivePrinciple(active ? null : index)}
+                aria-expanded={active}
+              >
+                <div className="recruiter-principle-front">
+                  <Icon size={22} />
+                  <h2>{title}</h2>
+                  <span>Clique para ver</span>
+                </div>
+                <div className="recruiter-principle-detail">
+                  <Icon size={20} />
+                  <h2>{title}</h2>
+                  <p>{text}</p>
+                </div>
+              </button>
+            )
+          })}
         </section>
 
-        <section className="recruiter-cases">
+        <section className="recruiter-cases recruiter-animate">
           {cases.map((item, index) => (
             <article className="recruiter-case" key={item.title}>
               <div className="recruiter-case-heading">
@@ -98,7 +139,7 @@ export function RecruiterPage() {
           ))}
         </section>
 
-        <section className="recruiter-closing">
+        <section className="recruiter-closing recruiter-animate">
           <span className="section-kicker">Próximo nível</span>
           <h2>Meu objetivo não é parecer pleno antes da hora. É construir repertório para chegar lá com fundamento.</h2>
           <p>Hoje eu me posiciono como desenvolvedor júnior em evolução, com projetos reais que já me obrigaram a lidar com integração, dados, segurança, automação, deploy e experiência do usuário. Procuro oportunidades em que eu possa continuar aumentando a qualidade das decisões técnicas, trabalhando com revisão, padrões e colaboração de equipe.</p>
