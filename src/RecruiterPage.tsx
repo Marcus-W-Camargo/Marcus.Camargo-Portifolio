@@ -96,9 +96,8 @@ export function RecruiterPage() {
                 aria-expanded={active}
               >
                 <div className="recruiter-principle-front">
-                  <Icon size={22} />
+                  <div className="recruiter-principle-icon"><Icon size={40} strokeWidth={1.6} /></div>
                   <h2>{title}</h2>
-                  <span>Clique para ver</span>
                 </div>
                 <div className="recruiter-principle-detail">
                   <Icon size={20} />
