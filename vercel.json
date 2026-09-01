@@ -30,6 +30,10 @@
     {
       "source": "/privacidade",
       "destination": "/index.html"
+    },
+    {
+      "source": "/recrutadores",
+      "destination": "/index.html"
     }
   ]
 }

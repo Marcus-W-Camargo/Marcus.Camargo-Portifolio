@@ -16,11 +16,16 @@ import './mobile-project-preview-overrides.css'
 import './letreiro-keyboard-layout-overrides.css'
 import './logo-overrides.css'
 import './privacy.css'
+import './commercial-recruiter.css'
+import './commercial-recruiter-refinements.css'
+import './commercial-recruiter-visual-fixes.css'
+import './hero-orbit-icons.css'
 import App from './App'
 import { PrivacyPage } from './PrivacyPage'
+import { RecruiterPage } from './RecruiterPage'
 
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
-const Page = pathname === '/privacidade' ? PrivacyPage : App
+const Page = pathname === '/privacidade' ? PrivacyPage : pathname === '/recrutadores' ? RecruiterPage : App
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

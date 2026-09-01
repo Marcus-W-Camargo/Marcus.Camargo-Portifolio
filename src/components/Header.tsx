@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BriefcaseBusiness } from 'lucide-react'
 import profile from '../assets/Perfil Marcus Camargo - Portifolio.png'
 
 const links = [
@@ -40,6 +41,10 @@ export function Header() {
             {label}
           </a>
         ))}
+        <a className="nav-recruiter" href="/recrutadores" onClick={closeMenu}>
+          <BriefcaseBusiness size={16} />
+          Para recrutadores
+        </a>
         <a className="nav-cta" href="#contato" onClick={closeMenu}>
           Contato
         </a>

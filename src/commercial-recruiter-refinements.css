@@ -1,0 +1,353 @@
+.commercial-hero.section {
+  padding-bottom: 44px;
+}
+
+.commercial-value-band {
+  margin-bottom: 44px;
+}
+
+.brand-showcase {
+  margin-bottom: 34px;
+}
+
+.services-section.section,
+.commercial-projects.section,
+.about-section.section,
+.contact-section.section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.commercial-service-card {
+  transition: transform .32s ease, border-color .32s ease, box-shadow .32s ease;
+}
+
+.commercial-service-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255, 55, 156, .28);
+  box-shadow: 0 22px 54px rgba(255, 10, 120, .08);
+}
+
+.commercial-orbit .orbit-one {
+  animation: commercial-spin 16s linear infinite;
+}
+
+.commercial-orbit .orbit-two {
+  animation: commercial-spin-reverse 21s linear infinite;
+}
+
+.commercial-orbit .hero-logo-card {
+  animation: logo-breathe 5.5s ease-in-out infinite;
+}
+
+@keyframes commercial-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes commercial-spin-reverse {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes logo-breathe {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 rgba(255, 10, 120, 0)); }
+  50% { transform: scale(1.018); filter: drop-shadow(0 0 22px rgba(255, 10, 120, .12)); }
+}
+
+.commercial-project-slide {
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.commercial-project-slide:hover {
+  border-color: rgba(255, 71, 171, .22);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, .22);
+}
+
+.nav-recruiter,
+.commercial-hero .button-github,
+.inline-recruiter-link {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease, color .28s ease, background .28s ease;
+}
+
+.nav-recruiter::before,
+.commercial-hero .button-github::before,
+.inline-recruiter-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(-105%);
+  background: linear-gradient(110deg, rgba(255,255,255,.02), rgba(255,255,255,.16), rgba(255,255,255,.02));
+  transition: transform .45s cubic-bezier(.2,.7,.2,1);
+}
+
+.nav-recruiter:hover,
+.commercial-hero .button-github:hover {
+  transform: translateY(-3px) scale(1.015);
+  border-color: rgba(255, 74, 178, .62);
+  box-shadow: 0 14px 36px rgba(255, 15, 129, .2), 0 0 0 1px rgba(188, 112, 255, .12) inset;
+}
+
+.commercial-hero .button-github:hover {
+  background: linear-gradient(135deg, rgba(255, 15, 129, .16), rgba(152, 86, 255, .14));
+}
+
+.nav-recruiter:hover::before,
+.commercial-hero .button-github:hover::before,
+.inline-recruiter-link:hover::before {
+  transform: translateX(105%);
+}
+
+.nav-recruiter svg,
+.commercial-hero .button-github svg,
+.inline-recruiter-link svg {
+  transition: transform .28s ease, filter .28s ease;
+}
+
+.nav-recruiter:hover svg,
+.commercial-hero .button-github:hover svg {
+  transform: translateX(2px) rotate(-5deg) scale(1.08);
+  filter: drop-shadow(0 0 8px rgba(255, 107, 192, .42));
+}
+
+.inline-recruiter-link {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.inline-recruiter-link:hover {
+  transform: translateX(4px);
+  border-color: rgba(255, 74, 178, .22);
+  background: rgba(255, 255, 255, .025);
+}
+
+.recruiter-main {
+  padding-top: 58px;
+}
+
+.recruiter-hero {
+  padding-bottom: 48px;
+}
+
+.recruiter-principles {
+  margin-bottom: 58px;
+  gap: 16px;
+}
+
+.recruiter-principle-card {
+  min-height: 190px;
+  padding: 0;
+  border: 1px solid rgba(231, 91, 172, .24);
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text);
+  background:
+    linear-gradient(145deg, rgba(177, 37, 114, .72), rgba(118, 51, 147, .74)),
+    rgba(20, 14, 29, .96);
+  box-shadow: 0 16px 40px rgba(110, 24, 79, .16);
+  transition: transform .32s ease, border-color .32s ease, box-shadow .32s ease, background .4s ease;
+}
+
+.recruiter-principle-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 196, 231, .10), transparent 44%);
+  opacity: .72;
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.recruiter-principle-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(244, 119, 193, .38);
+  box-shadow: 0 22px 52px rgba(106, 26, 77, .24);
+}
+
+.recruiter-principle-card:hover::after {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.recruiter-principle-front,
+.recruiter-principle-detail {
+  min-height: 190px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: opacity .34s ease, transform .42s cubic-bezier(.2,.7,.2,1);
+}
+
+.recruiter-principle-front {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+}
+
+.recruiter-principle-icon {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  color: rgba(255, 236, 247, .96);
+  background: rgba(11, 8, 18, .24);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: inset 0 0 24px rgba(255,255,255,.035), 0 12px 30px rgba(0,0,0,.12);
+  transition: transform .32s ease, background .32s ease, box-shadow .32s ease;
+}
+
+.recruiter-principle-card:hover .recruiter-principle-icon {
+  transform: translateY(-2px) scale(1.06);
+  background: rgba(11, 8, 18, .32);
+  box-shadow: inset 0 0 26px rgba(255,255,255,.05), 0 16px 34px rgba(0,0,0,.18);
+}
+
+.recruiter-principle-front h2,
+.recruiter-principle-detail h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.recruiter-principle-detail {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  background: rgba(21, 15, 31, .985);
+  justify-content: flex-start;
+}
+
+.recruiter-principle-detail p {
+  margin: 18px 0 0;
+  color: var(--muted);
+  line-height: 1.68;
+  font-size: 13px;
+}
+
+.recruiter-principle-card.active {
+  border-color: rgba(216, 175, 255, .32);
+  background: rgba(21, 15, 31, .98);
+}
+
+.recruiter-principle-card.active::after {
+  opacity: 0;
+}
+
+.recruiter-principle-card.active .recruiter-principle-front {
+  opacity: 0;
+  transform: translateY(-14px);
+}
+
+.recruiter-principle-card.active .recruiter-principle-detail {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.recruiter-case {
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+
+.recruiter-case:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 73, 176, .2);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, .2);
+}
+
+.recruiter-links a,
+.recruiter-closing > a,
+.recruiter-back {
+  position: relative;
+  overflow: hidden;
+  transition: transform .28s ease, border-color .28s ease, background .28s ease, color .28s ease, box-shadow .28s ease;
+}
+
+.recruiter-links a:hover,
+.recruiter-closing > a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 82, 177, .34);
+  background: rgba(255, 72, 169, .055);
+  box-shadow: 0 10px 26px rgba(0,0,0,.16);
+}
+
+.recruiter-back:hover {
+  color: var(--text);
+  transform: translateX(-3px);
+}
+
+.recruiter-links a svg,
+.recruiter-closing > a svg,
+.recruiter-back svg {
+  transition: transform .28s ease;
+}
+
+.recruiter-links a:hover svg,
+.recruiter-closing > a:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.recruiter-back:hover svg {
+  transform: translateX(-3px);
+}
+
+.recruiter-animate {
+  animation: recruiter-rise .7s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.recruiter-principles.recruiter-animate { animation-delay: .08s; }
+.recruiter-cases.recruiter-animate { animation-delay: .16s; }
+.recruiter-closing.recruiter-animate { animation-delay: .22s; }
+
+@keyframes recruiter-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .services-section.section,
+  .commercial-projects.section,
+  .about-section.section,
+  .contact-section.section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .recruiter-principle-card,
+  .recruiter-principle-front,
+  .recruiter-principle-detail {
+    min-height: 160px;
+  }
+
+  .recruiter-principle-icon {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .commercial-orbit .orbit-one,
+  .commercial-orbit .orbit-two,
+  .commercial-orbit .hero-logo-card,
+  .recruiter-animate {
+    animation: none;
+  }
+
+  .commercial-service-card:hover,
+  .recruiter-principle-card:hover,
+  .recruiter-case:hover,
+  .nav-recruiter:hover,
+  .commercial-hero .button-github:hover,
+  .inline-recruiter-link:hover,
+  .recruiter-links a:hover,
+  .recruiter-closing > a:hover,
+  .recruiter-back:hover {
+    transform: none;
+  }
+}
