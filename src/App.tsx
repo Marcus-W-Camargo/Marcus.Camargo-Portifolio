@@ -44,11 +44,11 @@ const services = [
 ]
 
 const orbitIcons = [
-  { icon: Globe2, label: 'Presença', className: 'orbit-bubble-one', depth: 'front' },
-  { icon: Database, label: 'Organização', className: 'orbit-bubble-two', depth: 'back' },
-  { icon: Bot, label: 'Agilidade', className: 'orbit-bubble-three', depth: 'front' },
-  { icon: Workflow, label: 'Integrações', className: 'orbit-bubble-four', depth: 'back' },
-  { icon: PanelsTopLeft, label: 'Sistemas', className: 'orbit-bubble-five', depth: 'front' },
+  { icon: Globe2, label: 'Presença', className: 'orbit-bubble-one' },
+  { icon: Database, label: 'Organização', className: 'orbit-bubble-two' },
+  { icon: Bot, label: 'Agilidade', className: 'orbit-bubble-three' },
+  { icon: Workflow, label: 'Integrações', className: 'orbit-bubble-four' },
+  { icon: PanelsTopLeft, label: 'Sistemas', className: 'orbit-bubble-five' },
 ]
 
 const contactLinks = {
@@ -126,25 +126,25 @@ function App() {
               <div className="orbit-dot dot-one" />
               <div className="orbit-dot dot-two" />
 
-              {orbitIcons
-                .filter(({ depth }) => depth === 'back')
-                .map(({ icon: Icon, label, className }) => (
-                  <div className={`hero-orbit-bubble hero-orbit-bubble-back ${className}`} key={label} aria-hidden="true">
+              <div className="hero-orbit-layer hero-orbit-layer-back" aria-hidden="true">
+                {orbitIcons.map(({ icon: Icon, label, className }) => (
+                  <div className={`hero-orbit-bubble hero-orbit-bubble-back ${className}`} key={`back-${label}`}>
                     <span><Icon size={20} strokeWidth={1.8} /></span>
                   </div>
                 ))}
+              </div>
 
               <div className="hero-profile-card hero-logo-card">
                 <img className="hero-logo-image" src={logo} alt="Logomarca Marcus Camargo Portfólio" />
               </div>
 
-              {orbitIcons
-                .filter(({ depth }) => depth === 'front')
-                .map(({ icon: Icon, label, className }) => (
-                  <div className={`hero-orbit-bubble hero-orbit-bubble-front ${className}`} key={label} aria-hidden="true">
+              <div className="hero-orbit-layer hero-orbit-layer-front" aria-hidden="true">
+                {orbitIcons.map(({ icon: Icon, label, className }) => (
+                  <div className={`hero-orbit-bubble hero-orbit-bubble-front ${className}`} key={`front-${label}`}>
                     <span><Icon size={20} strokeWidth={1.8} /></span>
                   </div>
                 ))}
+              </div>
             </div>
           </div>
         </section>
