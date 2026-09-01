@@ -221,27 +221,174 @@
   }
 }
 
+/* Desktop compacto: preserva o hero lado a lado, mas reduz pressão horizontal. */
 @media (max-width: 1180px) {
+  .commercial-hero {
+    gap: 42px;
+  }
+
+  .commercial-hero .hero-copy h1 {
+    font-size: clamp(40px, 5vw, 62px);
+  }
+
+  .commercial-hero .hero-actions {
+    width: auto;
+    max-width: 650px;
+    flex-wrap: wrap;
+  }
+
   .commercial-hero .hero-actions .button {
     padding: 0 12px;
     font-size: 12px;
   }
-}
 
-@media (max-width: 1080px) {
-  .commercial-hero .hero-actions {
-    flex-wrap: wrap;
-    width: auto;
+  .commercial-hero .profile-orbit {
+    width: min(440px, 40vw);
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-preview {
+    padding: 34px;
+  }
+
+  .recruiter-principles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recruiter-principles .recruiter-principle-card:last-child {
+    grid-column: 1 / -1;
   }
 }
 
-@media (max-width: 900px) {
+/* Notebook menor: mantém leitura confortável sem espremer a logo nem os CTAs. */
+@media (min-width: 901px) and (max-width: 1080px) {
+  .commercial-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, .72fr);
+    gap: 28px;
+    padding-top: 58px;
+  }
+
   .commercial-hero .hero-copy h1 {
-    font-size: clamp(39px, 8vw, 58px);
+    font-size: clamp(38px, 4.8vw, 54px);
+  }
+
+  .commercial-hero .hero-text {
+    font-size: 15.5px;
+    line-height: 1.68;
+  }
+
+  .commercial-hero .profile-orbit {
+    width: min(380px, 36vw);
+  }
+
+  .commercial-hero .hero-actions {
+    gap: 8px;
+  }
+
+  .commercial-hero .hero-actions .button {
+    min-height: 48px;
+    padding-inline: 11px;
+    font-size: 11.5px;
   }
 
   .commercial-value-band {
-    margin-top: -4px;
+    width: min(100% - 32px, 1180px);
+  }
+
+  .commercial-value-band > div {
+    padding: 20px;
+  }
+
+  .orbit-bubble-one { --start-x: -184px; --end-x: 184px; --start-y: 145px; --end-y: -145px; }
+  .orbit-bubble-two { --start-x: -184px; --end-x: 184px; --start-y: -145px; --end-y: 145px; }
+  .orbit-bubble-three { --start-x: -186px; --end-x: 186px; --start-y: -80px; --end-y: 64px; }
+  .orbit-bubble-four { --start-x: -186px; --end-x: 186px; --start-y: 75px; --end-y: -61px; }
+  .orbit-bubble-five { --start-x: -180px; --end-x: 180px; --start-y: 42px; --end-y: -30px; }
+}
+
+/* Tablet e celular grande: hero passa a ser vertical e a logo vira um segundo ato visual. */
+@media (max-width: 900px) {
+  .commercial-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding-top: 48px;
+    padding-bottom: 34px;
+    overflow: visible;
+  }
+
+  .commercial-hero .hero-copy {
+    max-width: 760px;
+  }
+
+  .commercial-hero .hero-copy h1 {
+    font-size: clamp(39px, 8vw, 58px);
+    max-width: 720px;
+  }
+
+  .commercial-hero .hero-text {
+    max-width: 680px;
+  }
+
+  .commercial-hero .hero-actions {
+    width: min(100%, 620px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .commercial-hero .hero-actions .button {
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .commercial-hero .hero-actions .button-github {
+    grid-column: 1 / -1;
+  }
+
+  .commercial-hero .hero-visual {
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .commercial-hero .profile-orbit {
+    width: min(430px, 82vw);
+  }
+
+  .commercial-value-band {
+    width: min(100% - 28px, 760px);
+    margin-top: -2px;
+    margin-bottom: 34px;
+    border-radius: 18px;
+  }
+
+  .commercial-value-band > div {
+    padding: 18px 20px;
+  }
+
+  .brand-showcase-inner,
+  .about-panel,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .commercial-project-slide {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .commercial-project-slide .project-preview {
+    min-height: 390px;
+    padding: 28px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-orbit-bubble,
@@ -254,25 +401,126 @@
     margin: -23px 0 0 -23px;
   }
 
-  .orbit-bubble-one { --start-x: -158px; --end-x: 158px; --start-y: 124px; --end-y: -124px; }
-  .orbit-bubble-two { --start-x: -158px; --end-x: 158px; --start-y: -124px; --end-y: 124px; }
-  .orbit-bubble-three { --start-x: -160px; --end-x: 160px; --start-y: -72px; --end-y: 58px; }
-  .orbit-bubble-four { --start-x: -160px; --end-x: 160px; --start-y: 68px; --end-y: -54px; }
-  .orbit-bubble-five { --start-x: -156px; --end-x: 156px; --start-y: 38px; --end-y: -26px; }
+  .orbit-bubble-one { --start-x: -166px; --end-x: 166px; --start-y: 130px; --end-y: -130px; }
+  .orbit-bubble-two { --start-x: -166px; --end-x: 166px; --start-y: -130px; --end-y: 130px; }
+  .orbit-bubble-three { --start-x: -168px; --end-x: 168px; --start-y: -74px; --end-y: 60px; }
+  .orbit-bubble-four { --start-x: -168px; --end-x: 168px; --start-y: 70px; --end-y: -56px; }
+  .orbit-bubble-five { --start-x: -162px; --end-x: 162px; --start-y: 40px; --end-y: -28px; }
+
+  .recruiter-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .recruiter-principles .recruiter-principle-card:last-child {
+    grid-column: auto;
+  }
 }
 
+/* Celular: CTAs empilhados, órbita compacta e cards com densidade menor. */
 @media (max-width: 640px) {
-  .commercial-value-band {
-    margin-top: 2px;
+  .commercial-hero.section {
+    width: min(calc(100% - 28px), 1200px);
+    padding-top: 38px;
+    padding-bottom: 26px;
+  }
+
+  .commercial-hero .eyebrow {
+    font-size: 9.5px;
+    letter-spacing: .13em;
+    line-height: 1.45;
+  }
+
+  .commercial-hero .hero-copy h1 {
+    margin: 18px 0 18px;
+    font-size: clamp(34px, 10.5vw, 46px);
+    line-height: 1.01;
+    letter-spacing: -.045em;
+  }
+
+  .commercial-hero .hero-text {
+    font-size: 15px;
+    line-height: 1.65;
   }
 
   .commercial-hero .hero-actions {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: 26px;
   }
 
-  .commercial-hero .hero-actions .button {
-    font-size: 12px;
+  .commercial-hero .hero-actions .button,
+  .commercial-hero .hero-actions .button-github {
+    grid-column: auto;
+    width: 100%;
+    min-height: 48px;
     padding: 0 14px;
+    font-size: 12px;
+  }
+
+  .commercial-hero .profile-orbit {
+    width: min(330px, 90vw);
+  }
+
+  .commercial-orbit .hero-logo-card {
+    width: 70%;
+  }
+
+  .commercial-value-band {
+    width: min(calc(100% - 28px), 520px);
+    margin-top: 0;
+    margin-bottom: 28px;
+  }
+
+  .commercial-value-band > div {
+    padding: 16px 17px;
+    gap: 3px 10px;
+  }
+
+  .commercial-value-band span {
+    font-size: 12px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commercial-service-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .commercial-service-card h3 {
+    margin-top: 46px;
+  }
+
+  .commercial-project-slide {
+    border-radius: 22px;
+  }
+
+  .commercial-project-slide .project-preview {
+    min-height: 320px;
+    padding: 18px;
+  }
+
+  .project-slider-heading {
+    gap: 18px;
+  }
+
+  .project-slider-controls button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .recruiter-principle-card,
+  .recruiter-principle-front,
+  .recruiter-principle-detail {
+    min-height: 220px;
+  }
+
+  .recruiter-principle-front,
+  .recruiter-principle-detail {
+    padding: 22px;
   }
 
   .hero-orbit-bubble,
@@ -290,11 +538,42 @@
     height: 17px;
   }
 
-  .orbit-bubble-one { --start-x: -128px; --end-x: 128px; --start-y: 100px; --end-y: -100px; }
-  .orbit-bubble-two { --start-x: -128px; --end-x: 128px; --start-y: -100px; --end-y: 100px; }
-  .orbit-bubble-three { --start-x: -130px; --end-x: 130px; --start-y: -58px; --end-y: 46px; }
-  .orbit-bubble-four { --start-x: -130px; --end-x: 130px; --start-y: 54px; --end-y: -44px; }
-  .orbit-bubble-five { --start-x: -126px; --end-x: 126px; --start-y: 30px; --end-y: -22px; }
+  .orbit-bubble-one { --start-x: -132px; --end-x: 132px; --start-y: 104px; --end-y: -104px; }
+  .orbit-bubble-two { --start-x: -132px; --end-x: 132px; --start-y: -104px; --end-y: 104px; }
+  .orbit-bubble-three { --start-x: -134px; --end-x: 134px; --start-y: -60px; --end-y: 48px; }
+  .orbit-bubble-four { --start-x: -134px; --end-x: 134px; --start-y: 56px; --end-y: -45px; }
+  .orbit-bubble-five { --start-x: -130px; --end-x: 130px; --start-y: 32px; --end-y: -23px; }
+}
+
+/* Celulares estreitos: reduz o desenho orbital sem comprometer a leitura do hero. */
+@media (max-width: 420px) {
+  .commercial-hero .hero-copy h1 {
+    font-size: clamp(32px, 10.8vw, 40px);
+  }
+
+  .commercial-hero .profile-orbit {
+    width: min(300px, 88vw);
+  }
+
+  .commercial-orbit .hero-logo-card {
+    width: 68%;
+  }
+
+  .hero-orbit-bubble,
+  .hero-orbit-bubble span {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-orbit-bubble {
+    margin: -18px 0 0 -18px;
+  }
+
+  .orbit-bubble-one { --start-x: -118px; --end-x: 118px; --start-y: 92px; --end-y: -92px; }
+  .orbit-bubble-two { --start-x: -118px; --end-x: 118px; --start-y: -92px; --end-y: 92px; }
+  .orbit-bubble-three { --start-x: -120px; --end-x: 120px; --start-y: -54px; --end-y: 43px; }
+  .orbit-bubble-four { --start-x: -120px; --end-x: 120px; --start-y: 50px; --end-y: -40px; }
+  .orbit-bubble-five { --start-x: -116px; --end-x: 116px; --start-y: 28px; --end-y: -20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
