@@ -110,7 +110,7 @@ function App() {
               <span>transmite confiança e gera resultado.</span>
             </h1>
             <p className="hero-text">
-              Eu transformo necessidades reais em páginas, sistemas e automações claras, modernas e fáceis de usar — com atenção ao que o seu cliente precisa sentir, entender e fazer.
+              Eu transformo necessidades reais em páginas, sistemas e automações claras, modernas e fáceis de usar. Com atenção ao que o seu cliente precisa sentir, entender e fazer.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projetos">Ver soluções na prática <ArrowUpRight size={18} /></a>
