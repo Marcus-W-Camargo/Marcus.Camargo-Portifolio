@@ -43,6 +43,14 @@ const services = [
   },
 ]
 
+const orbitIcons = [
+  { icon: Globe2, label: 'Presença', className: 'orbit-bubble-one' },
+  { icon: Database, label: 'Organização', className: 'orbit-bubble-two' },
+  { icon: Bot, label: 'Agilidade', className: 'orbit-bubble-three' },
+  { icon: Workflow, label: 'Integrações', className: 'orbit-bubble-four' },
+  { icon: PanelsTopLeft, label: 'Sistemas', className: 'orbit-bubble-five' },
+]
+
 const contactLinks = {
   whatsapp: 'https://wa.me/message/S2FPE7ASPUHHM1',
   instagram: 'https://www.instagram.com/marcus.camargo_portifolio?igsi=ZmdpOTdzNmIzY25p',
@@ -117,9 +125,22 @@ function App() {
               <div className="orbit orbit-two" />
               <div className="orbit-dot dot-one" />
               <div className="orbit-dot dot-two" />
+
+              {orbitIcons.map(({ icon: Icon, label, className }) => (
+                <div className={`hero-orbit-bubble hero-orbit-bubble-back ${className}`} key={`${label}-back`} aria-hidden="true">
+                  <span><Icon size={20} strokeWidth={1.8} /></span>
+                </div>
+              ))}
+
               <div className="hero-profile-card hero-logo-card">
                 <img className="hero-logo-image" src={logo} alt="Logomarca Marcus Camargo Portfólio" />
               </div>
+
+              {orbitIcons.map(({ icon: Icon, label, className }) => (
+                <div className={`hero-orbit-bubble hero-orbit-bubble-front ${className}`} key={`${label}-front`} aria-hidden="true">
+                  <span><Icon size={20} strokeWidth={1.8} /></span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
