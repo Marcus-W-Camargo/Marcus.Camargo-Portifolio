@@ -1,0 +1,37 @@
+.button-github[href="/recrutadores"] {
+  transform-origin: center;
+}
+
+.button-github[href="/recrutadores"]:hover {
+  transform: translateY(-4px) !important;
+}
+
+.button-github[href="/recrutadores"]:active {
+  transform: translateY(-1px) !important;
+}
+
+.recruiter-principle-detail {
+  justify-content: flex-start;
+  gap: 18px;
+}
+
+.recruiter-principle-detail-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.recruiter-principle-detail-heading svg {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+}
+
+.recruiter-principle-detail-heading h2 {
+  margin: 0;
+}
+
+.recruiter-principle-detail p {
+  margin: 0;
+}
