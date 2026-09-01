@@ -72,7 +72,7 @@ function App() {
           }
         })
       },
-      { threshold: 0.14 },
+      { threshold: 0.1, rootMargin: '0px 0px -6% 0px' },
     )
 
     elements.forEach((element) => observer.observe(element))
@@ -109,12 +109,6 @@ function App() {
               <a className="button button-secondary button-contact-animated" href="#contato">Quero conversar</a>
               <a className="button button-github" href="/recrutadores"><Sparkles size={18} /> Para recrutadores</a>
             </div>
-
-            <div className="commercial-proof-strip">
-              <span>Problema real</span>
-              <span>Experiência clara</span>
-              <span>Projeto publicado</span>
-            </div>
           </div>
 
           <div className="hero-visual" data-reveal>
@@ -126,8 +120,6 @@ function App() {
               <div className="hero-profile-card hero-logo-card">
                 <img className="hero-logo-image" src={logo} alt="Logomarca Marcus Camargo Portfólio" />
               </div>
-              <div className="floating-message floating-message-one">Ideia → solução</div>
-              <div className="floating-message floating-message-two">Design com propósito</div>
             </div>
           </div>
         </section>
@@ -164,7 +156,7 @@ function App() {
 
         <section className="section projects-section commercial-projects" id="projetos" data-reveal>
           <div className="project-slider-heading">
-            <SectionHeading kicker="Projetos em destaque" title="Um projeto por vez. Uma história que vale a pena entender." text="Navegue horizontalmente pelas soluções. A ideia não é mostrar uma pilha de cards, e sim dar espaço para cada projeto explicar o problema que resolve." />
+            <SectionHeading kicker="Projetos em destaque" title="Um projeto por vez. Uma história que vale a pena entender." text="Cada projeto nasce de uma necessidade diferente e mostra como uma ideia pode se transformar em uma experiência útil, clara e publicada." />
             <div className="project-slider-controls" aria-label="Navegação entre projetos">
               <button type="button" onClick={() => changeProject(-1)} aria-label="Projeto anterior"><ArrowLeft size={20} /></button>
               <span>{String(projectIndex + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span>
